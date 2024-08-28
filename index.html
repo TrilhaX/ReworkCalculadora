@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <select id="calculoTipo">
+            <option value="soma">Soma</option>
+            <option value="subtracao">Subtração</option>
+            <option value="multiplicacao">Multiplicação</option>
+            <option value="divisao">Divisão</option>
+            <option value="media">Média</option>
+            <option value="raizQuadrada">Raiz Quadrada</option>
+            <option value="raizCubica">Raiz Cúbica</option>
+            <option value="raiz">Raiz</option>
+            <option value="bhaskara">Bhaskara</option>
+            <option value="hipotenusa">Hipotenusa</option>
+            <option value="fatorial">Fatorial</option>
+            <option value="duploFatorial">Duplo Fatorial</option>
+            <option value="porcentagem">Porcentagem</option>
+            <option value="matrizQuadrada">Matriz Quadrada</option>
+            <option value="matrizInversa">Matriz Inversa</option>
+            <option value="sistemaLinear">Sistema Linear</option>
+        </select>
+
+        <div class="container">
+            <div id="input1Div">
+                <input id="input1" class="number1" type="number" placeholder="Digite o número 1">
+            </div>
+            <div id="input2Div">
+                <input id="input2" class="number2" type="number" placeholder="Digite o número 2">
+            </div>
+            <div id="input3Div" style="display: none;">
+                <input id="input3" class="number3" type="number" placeholder="Digite o número 3">
+            </div>
+            <div id="input4Div" style="display: none;">
+                <input id="input4" class="number4" type="number" placeholder="Digite o número 4">
+            </div>
+            <div id="matrizDiv" style="display: none;">
+                <input id="matrizA" type="number" placeholder="Valor de A">
+                <input id="matrizB" type="number" placeholder="Valor de B">
+                <input id="matrizC" type="number" placeholder="Valor de C">
+                <input id="matrizD" type="number" placeholder="Valor de D">
+            </div>
+
+        <div id="sistemaLinearDiv" style="display: none;">
+            <select id="tipoMatriz" style="display: none;">
+                <option value="" disabled selected>Escolha o tipo de matriz</option>
+                <option value="2x2">2x2</option>
+                <option value="3x3">3x3</option>
+            </select>
+            
+            <div id="sistemaLinearDiv2x2Div" style="display: none;">
+                <input id="a1" type="number" placeholder="Valor de A11">
+                <input id="a2" type="number" placeholder="Valor de A12">
+                <input id="a3" type="number" placeholder="Valor de A21">
+                <input id="a4" type="number" placeholder="Valor de A22">
+                <input id="r1" type="number" placeholder="Resultado 1">
+                <input id="r2" type="number" placeholder="Resultado 2">
+            </div>
+            <div id="sistemaLinearDiv3x3Div" style="display: none;">
+                <input id="a1" type="number" placeholder="Valor de A11">
+                <input id="a2" type="number" placeholder="Valor de A12">
+                <input id="a3" type="number" placeholder="Valor de A13">
+                <input id="a4" type="number" placeholder="Valor de A21">
+                <input id="a5" type="number" placeholder="Valor de A22">
+                <input id="a6" type="number" placeholder="Valor de A23">
+                <input id="a7" type="number" placeholder="Valor de A31">
+                <input id="a8" type="number" placeholder="Valor de A32">
+                <input id="a9" type="number" placeholder="Valor de A33">
+                <input id="r1" type="number" placeholder="Resultado 1">
+                <input id="r2" type="number" placeholder="Resultado 2">
+                <input id="r3" type="number" placeholder="Resultado 3">
+            </div>
+        </div>
+        
+        <button id="buttoncalcular">Calcular</button>
+
+        <h1>Resultado: <span id="resultado">0</span></h1>
+    </div>
+</body>
+</html>
