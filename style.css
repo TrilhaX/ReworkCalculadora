@@ -1,79 +1,173 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@media only screen and (min-width: 650px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: purple
+    }
+
+
+    .container {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #fff;
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    #calculoTipo {
+        margin-bottom: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        justify-content: center;
+    }
+
+    #tipoMatriz {
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    #sistemaLinearDiv {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    input,
+    button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: calc(100% - 22px);
+        /* Ajusta a largura para considerar a borda */
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+
+    button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: 1px solid #007bff;
+        /* Borda para o botão */
+    }
+
+    button:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        /* Muda a cor da borda no hover */
+    }
+
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        color: #333;
+        display: block;
+    }
 }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: purple
-}
+@media only screen and (min-width: 0) and (max-width: 650px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150vh;
+        background-color: purple
+    }
 
 
-.container {
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #fff;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
+    .container {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #fff;
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+    }
 
-#calculoTipo {
-    margin-bottom: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    justify-content: center;
-}
+    #calculoTipo {
+        margin-bottom: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        justify-content: center;
+    }
 
-#tipoMatriz {
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    max-width: 200px;
-    box-sizing: border-box;
-    display: block;
-}
+    #tipoMatriz {
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
 
-#sistemaLinearDiv {
-    text-align: center;
-    margin-top: 20px;
-}
+    #sistemaLinearDiv {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-input,
-button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: calc(100% - 22px); /* Ajusta a largura para considerar a borda */
-    box-sizing: border-box;
-    background-color: #fff;
-}
+    input,
+    button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: calc(100% - 22px);
+        /* Ajusta a largura para considerar a borda */
+        box-sizing: border-box;
+        background-color: #fff;
+    }
 
-button {
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: 1px solid #007bff; /* Borda para o botão */
-}
+    button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: 1px solid #007bff;
+        /* Borda para o botão */
+    }
 
-button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3; /* Muda a cor da borda no hover */
-}
+    button:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        /* Muda a cor da borda no hover */
+    }
 
-h1 {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #333;
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        color: #333;
+        display: block;
+    }
 }
