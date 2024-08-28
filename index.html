@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <div class="container">
         <select id="calculoTipo">
             <option value="soma">Soma</option>
             <option value="subtracao">Subtração</option>
@@ -25,30 +27,30 @@
             <option value="matrizQuadrada">Matriz Quadrada</option>
             <option value="matrizInversa">Matriz Inversa</option>
             <option value="sistemaLinear">Sistema Linear</option>
+            <option value="somaDeMatriz">Soma de Matriz</option>
         </select>
 
-        <div class="container">
-            <div id="input1Div">
-                <input id="input1" class="number1" type="number" placeholder="Digite o número 1">
-            </div>
-            <div id="input2Div">
-                <input id="input2" class="number2" type="number" placeholder="Digite o número 2">
-            </div>
-            <div id="input3Div" style="display: none;">
-                <input id="input3" class="number3" type="number" placeholder="Digite o número 3">
-            </div>
-            <div id="input4Div" style="display: none;">
-                <input id="input4" class="number4" type="number" placeholder="Digite o número 4">
-            </div>
-            <div id="matrizDiv" style="display: none;">
-                <input id="matrizA" type="number" placeholder="Valor de A">
-                <input id="matrizB" type="number" placeholder="Valor de B">
-                <input id="matrizC" type="number" placeholder="Valor de C">
-                <input id="matrizD" type="number" placeholder="Valor de D">
-            </div>
+        <div id="input1Div">
+            <input id="input1" class="number1" type="number" placeholder="Digite o número 1">
+        </div>
+        <div id="input2Div">
+            <input id="input2" class="number2" type="number" placeholder="Digite o número 2">
+        </div>
+        <div id="input3Div" style="display: none;">
+            <input id="input3" class="number3" type="number" placeholder="Digite o número 3">
+        </div>
+        <div id="input4Div" style="display: none;">
+            <input id="input4" class="number4" type="number" placeholder="Digite o número 4">
+        </div>
+        <div id="matrizDiv" style="display: none;">
+            <input id="matrizA" type="number" placeholder="Valor de A">
+            <input id="matrizB" type="number" placeholder="Valor de B">
+            <input id="matrizC" type="number" placeholder="Valor de C">
+            <input id="matrizD" type="number" placeholder="Valor de D">
+        </div>
 
         <div id="sistemaLinearDiv" style="display: none;">
-            <select id="tipoMatriz" style="display: none;">
+            <select id="tipoMatriz">
                 <option value="" disabled selected>Escolha o tipo de matriz</option>
                 <option value="2x2">2x2</option>
                 <option value="3x3">3x3</option>
@@ -62,6 +64,7 @@
                 <input id="r1" type="number" placeholder="Resultado 1">
                 <input id="r2" type="number" placeholder="Resultado 2">
             </div>
+
             <div id="sistemaLinearDiv3x3Div" style="display: none;">
                 <input id="a1" type="number" placeholder="Valor de A11">
                 <input id="a2" type="number" placeholder="Valor de A12">
@@ -76,6 +79,17 @@
                 <input id="r2" type="number" placeholder="Resultado 2">
                 <input id="r3" type="number" placeholder="Resultado 3">
             </div>
+        </div>
+
+        <div id="somaDeMatriz" style="display: none;">
+            <input id="matrizSomaA" type="number" placeholder="Valor de A da primeira Matriz">
+            <input id="matrizSomaB" type="number" placeholder="Valor de B da primeira Matriz">
+            <input id="matrizSomaC" type="number" placeholder="Valor de C da primeira Matriz">
+            <input id="matrizSomaD" type="number" placeholder="Valor de D da primeira Matriz">
+            <input id="matrizSomaA2" type="number" placeholder="Valor de A da segunda Matriz">
+            <input id="matrizSomaB2" type="number" placeholder="Valor de B da segunda Matriz">
+            <input id="matrizSomaC2" type="number" placeholder="Valor de C da segunda Matriz">
+            <input id="matrizSomaD2" type="number" placeholder="Valor de D da segunda Matriz">
         </div>
         
         <button id="buttoncalcular">Calcular</button>
