@@ -1,4 +1,4 @@
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 650px) and (max-width: 50000px) {
     * {
         margin: 0;
         padding: 0;
@@ -53,6 +53,7 @@
     button {
         display: block;
         margin: 10px auto;
+        margin-bottom: 20px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -82,6 +83,12 @@
         font-size: 1.5em;
         color: #333;
         display: block;
+    }
+
+    #resultado {
+        border: 1px solid black; /* Define a borda preta */
+        padding: 10px; /* Espaço interno */
+        margin-bottom: 20px; /* Espaço abaixo */
     }
 }
 

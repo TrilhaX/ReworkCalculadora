@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     let x1 = (-b + Math.sqrt(delta)) / (2 * a);
                     let x2 = (-b - Math.sqrt(delta)) / (2 * a);
-                    result = `x1 = ${x1}, x2 = ${x2}`;
+                    result = `Delta = ${delta}  x1 = ${x1}  x2 = ${x2}`;
                 }
                 break;
             case "hipotenusa":
@@ -214,8 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     let DyD = Dy / determinante;
 
                     if (determinante !== 0) {
-                        result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
-                        result += `. Classificação: SPD`;
+                        result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br>Dx é: ${Dx.toFixed(2).replace('.', ',')}<br>Dy é: ${Dy.toFixed(2).replace('.', ',')}<br>X é: ${DxD.toFixed(2).replace('.', ',')}<br>Y é: ${DyD.toFixed(2).replace('.', ',')}`;
+                        result += `<br>Classificação: SPD`;                        
                     } else if (determinante === 0 && Dx === 0 && Dy === 0) {
                         result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
                         result += `. Classificação: SPI`;
