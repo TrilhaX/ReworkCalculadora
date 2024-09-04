@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="imagens/transferir__1_-removebg-preview.png">
 </head>
 <body>
     <div class="container">
         <select id="calculoTipo">
-            <option value="soma">Soma</option>
-            <option value="subtracao">Subtração</option>
-            <option value="multiplicacao">Multiplicação</option>
-            <option value="divisao">Divisão</option>
-            <option value="media">Média</option>
-            <option value="potencia">Potencia</option>
-            <option value="raiz">Raiz</option>
+            <option value="eval">Equação</option>
             <option value="porcentagem">Porcentagem</option>
             <option value="hipotenusa">Hipotenusa</option>
             <option value="bhaskara">Bhaskara</option>
@@ -26,32 +19,22 @@
             <option value="teoremaDePitagoras">Teorema de Pitagoras</option>
             <option value="Trigonometria">Trigonometria</option>
             <option value="logaritmo">Logaritmo</option>
-            <option value="matrizQuadrada">Matriz Quadrada</option>
-            <option value="matrizInversa">Matriz Inversa</option>
+            <option value="Matriz">Matriz</option>
+            <option value="funcaoQuadratica">Função Quadratica</option>
+            <option value="RazãoeProporção">Razão e Proporção</option>
+        </select>
+        <div id="input1Div" style="display: none">
+            <input id="input1" class="number1" type="number" placeholder="Digite um numero">
+        </div>
+
+        <select id="matrizTipo" style="display: none">
             <option value="somaDeMatriz">Soma de Matriz</option>
             <option value="multiplicacaoDeMatriz">Multiplicação de Matriz</option>
             <option value="sistemaLinear">Sistema Linear</option>
         </select>
 
-        <div id="input1Div">
-            <input id="input1" class="number1" type="number" placeholder="Digite o número 1">
-        </div>
-
-        <div id="input2Div">
-            <input id="input2" class="number2" type="number" placeholder="Digite o número 2">
-        </div>
-
-        <div id="input3Div" style="display: none;">
-            <input id="input3" class="number3" type="number" placeholder="Digite o número 3">
-        </div>
-
-        <div id="input4Div" style="display: none;">
-            <input id="input4" class="number4" type="number" placeholder="Digite o número 4">
-        </div>
-
-        <div id="RaizDiv" style="display: none;">
-            <input id="indice" class="number2" type="number" placeholder="Digite o índice">
-            <input id="radicando" class="number2" type="number" placeholder="Digite o radicando">
+        <div id="EvalDiv" style="display: block;">
+            <input id="expressao" class="number2" type="text" placeholder="Digite a expressão matemática">
         </div>
 
         <div id="PorcentagemDiv" style="display: none;">
@@ -64,22 +47,10 @@
             <input id="B" class="number2" type="number" placeholder="Digite o segundo numero">
         </div>
 
-        <div id="PotenciaDiv" style="display: none;">
-            <input id="base" class="number2" type="number" placeholder="Digite a base">
-            <input id="expoente" class="number2" type="number" placeholder="Digite a expoente">
-        </div>
-
         <div id="BhaskaraDiv" style="display: none;">
             <input id="BA" type="number" placeholder="Valor de A">
             <input id="BB" type="number" placeholder="Valor de B">
             <input id="BC" type="number" placeholder="Valor de C">
-        </div>
-
-        <div id="matrizDiv" style="display: none;">
-            <input id="matrizA" type="number" placeholder="Valor de A">
-            <input id="matrizB" type="number" placeholder="Valor de B">
-            <input id="matrizC" type="number" placeholder="Valor de C">
-            <input id="matrizD" type="number" placeholder="Valor de D">
         </div>
 
         <div id="TrigonometriaDiv" style="display: none;">
@@ -104,7 +75,7 @@
                 <option value="3x3">3x3</option>
             </select>
             
-            <div id="sistemaLinearDiv2x2Div" style="display: none;">
+            <div id="sistemaLinearDiv2x2Div" style="display: none">
                 <input id="a11" type="number" placeholder="Valor de A11">
                 <input id="a12" type="number" placeholder="Valor de A12">
                 <input id="a21" type="number" placeholder="Valor de A21">
@@ -113,7 +84,7 @@
                 <input id="r2" type="number" placeholder="Resultado 2">
             </div>
 
-            <div id="sistemaLinearDiv3x3Div" style="display: none;">
+            <div id="sistemaLinearDiv3x3Div" style="display: none">
                 <input id="a11" type="number" placeholder="Valor de A11">
                 <input id="a12" type="number" placeholder="Valor de A12">
                 <input id="a13" type="number" placeholder="Valor de A13">
@@ -129,26 +100,37 @@
             </div>
         </div>
 
-        <div id="somaDeMatrizDiv" style="display: none;">
-            <input id="matrizSomaA" type="number" placeholder="Valor de A da primeira Matriz">
-            <input id="matrizSomaB" type="number" placeholder="Valor de B da primeira Matriz">
-            <input id="matrizSomaC" type="number" placeholder="Valor de C da primeira Matriz">
-            <input id="matrizSomaD" type="number" placeholder="Valor de D da primeira Matriz">
-            <input id="matrizSomaA2" type="number" placeholder="Valor de A da segunda Matriz">
-            <input id="matrizSomaB2" type="number" placeholder="Valor de B da segunda Matriz">
-            <input id="matrizSomaC2" type="number" placeholder="Valor de C da segunda Matriz">
-            <input id="matrizSomaD2" type="number" placeholder="Valor de D da segunda Matriz">
-        </div>
-
         <div id="LogDiv" style="display: none;">
             <input id="logaritmo" type="number" placeholder="Digite a base">
             <input id="logaritmando" type="number" placeholder="Digite o logaritmando">
         </div>
+
+        <div class="RazãoeProporção" style="display: none;">
+            <select id="razaoouproporção" style="display: none;">
+                <option value="" disabled selected>Escolha qual a operação</option>
+                <option value="razão">Razão</option>
+                <option value="proporção">Proporção</option>
+            </select>
+
+            <div class="razão" style="display: none;">
+                <input id="A2" type="text" placeholder="Valor de A">
+                <input id="B2" type="text" placeholder="Valor de B">
+            </div>
+            <div class="proporção" style="display: none;">
+                <label for="">coloque o primeiro e o segundo valor pelos que vao se multiplicar e o terceio que vai dividir</label>
+                <input id="A3" type="text" placeholder="Primeiro Valor">
+                <input id="B3" type="text" placeholder="Segundo Valor">
+                <input id="C" type="text" placeholder="Terceiro Valor">
+            </div>
+        </div>
         
         <button id="buttoncalcular">Calcular</button>
 
-        <h1>Resultado:</h1>
-        <span id="resultado"></span>        
+        <div style="display: none;" class="resultadoDiv">
+            <h1>Resultado:</h1>
+            <span id="resultado"></span>
+        </div>      
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
