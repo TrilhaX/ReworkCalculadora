@@ -198,11 +198,20 @@ function  displayAllNone() {
     document.getElementById("TrigonometriaDiv").style.display = "none";
     document.getElementById("LogDiv").style.display = "none";
     document.getElementById("matrizTipo").style.display = "none";
+    document.getElementById("matrizDiv2").style.display = "none";
     document.getElementById("sistemaLinearDiv2x2Div").style.display = "none";
     document.getElementById("sistemaLinearDiv3x3Div").style.display = "none";
     document.getElementById("tipoMatriz").style.display = "none";
     document.querySelector(".RazãoeProporção").style.display = "none";
     document.querySelector(".raizDiv").style.display = "none";
+}
+
+function displayNoneMatriz(){
+    document.getElementById("matrizTipo").style.display = "none";
+    document.getElementById("matrizDiv2").style.display = "none";
+    document.getElementById("sistemaLinearDiv2x2Div").style.display = "none";
+    document.getElementById("sistemaLinearDiv3x3Div").style.display = "none";
+    document.getElementById("tipoMatriz").style.display = "none";
 }
 
 function operacaoSelected() {
@@ -236,6 +245,7 @@ function operacaoSelected() {
             document.getElementById("LogDiv").style.display = "block";
             break;
         case 'Matriz':
+            displayNoneMatriz()
             matrizTipo.style.display = "block";
             matrizTipo.addEventListener("change", function() {
                 switch (matrizTipo.value) {
@@ -250,6 +260,7 @@ function operacaoSelected() {
                     case 'sistemaLinear':
                         let tipoMatriz = document.getElementById("tipoMatriz");
                         let sistemaLinearDiv = document.getElementById("sistemaLinearDiv");
+                        document.getElementById("matrizDiv2").style.display = "none";
                         sistemaLinearDiv.style.display = "block";
                         tipoMatriz.style.display = "block";
                         tipoMatriz.addEventListener("change", () => {
