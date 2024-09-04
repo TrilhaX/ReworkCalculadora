@@ -3,7 +3,11 @@ function replaceSymbols(expression) {
         .replace(/x/g, '*')
         .replace(/÷/g, '/')
         .replace(/,/g, '.')
-        .replace(/\^/g, '**'); // Correctly replace `^` with `**`
+        .replace(/\^/g, '**') // Correctly replace `^` with `**`
+}
+
+function limparResultado(){
+    document.querySelector(".resultadoDiv").style.display = "none";
 }
 
 function calcular() {
@@ -22,6 +26,13 @@ function calcular() {
         }
     } else {
         switch (operacao) {
+            case 'raiz':
+                let raiz1 = parseFloat(document.getElementById("raiz1").value);
+                let raiz2 = parseFloat(document.getElementById("raiz2").value);
+            
+                let raizR = Math.pow(raiz1, 1 / raiz2);
+                resultado = raizR.toFixed(2);
+                break;            
             case 'porcentagem':
                 const numero = parseFloat(document.getElementById("numero").value);
                 const porcentagem = parseFloat(document.getElementById("porcentagem").value);
@@ -80,58 +91,58 @@ function calcular() {
                 } else if (matrizTipo === "sistemaLinear") {
                     let tipo = tipoMatriz.value;
 
-                    if (tipo === "2x2") {
-                        let a1 = parseFloat(document.getElementById("a11").value) || 0;
-                        let a2 = parseFloat(document.getElementById("a12").value) || 0;
-                        let a3 = parseFloat(document.getElementById("a21").value) || 0;
-                        let a4 = parseFloat(document.getElementById("a22").value) || 0;
-                        let r1 = parseFloat(document.getElementById("r1").value) || 0;
-                        let r2 = parseFloat(document.getElementById("r2").value) || 0;
-    
-                        let determinante = a1 * a4 - a2 * a3;
-                        let Dx = r1 * a4 - r2 * a2;
-                        let Dy = a1 * r2 - a3 * r1;
-                        let DxD = Dx / determinante;
-                        let DyD = Dy / determinante;
-    
-                        if (determinante !== 0) {
-                            resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br>Dx é: ${Dx.toFixed(2).replace('.', ',')}<br>Dy é: ${Dy.toFixed(2).replace('.', ',')}<br>X é: ${DxD.toFixed(2).replace('.', ',')}<br>Y é: ${DyD.toFixed(2).replace('.', ',')}`;
-                            resultado += `<br>Classificação: SPD`;                        
-                        } else if (determinante === 0 && Dx === 0 && Dy === 0) {
-                            resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
-                            resultado += `. Classificação: SPI`;
-                        } else {
-                            resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
-                            resultado += `. Classificação: SI`;
-                        }
-                    } else if (tipo === "3x3") {
-                        let a1 = parseFloat(document.getElementById("a11").value) || 0;
-                        let a2 = parseFloat(document.getElementById("a12").value) || 0;
-                        let a3 = parseFloat(document.getElementById("a13").value) || 0;
-                        let a4 = parseFloat(document.getElementById("a21").value) || 0;
-                        let a5 = parseFloat(document.getElementById("a22").value) || 0;
-                        let a6 = parseFloat(document.getElementById("a23").value) || 0;
-                        let a7 = parseFloat(document.getElementById("a31").value) || 0;
-                        let a8 = parseFloat(document.getElementById("a32").value) || 0;
-                        let a9 = parseFloat(document.getElementById("a33").value) || 0;
-                        let r1 = parseFloat(document.getElementById("r1").value) || 0;
-                        let r2 = parseFloat(document.getElementById("r2").value) || 0;
-                        let r3 = parseFloat(document.getElementById("r3").value) || 0;
-    
-                        let determinante = (a1 * a5 * a9) + (a2 * a6 * a7) + (a3 * a4 * a8) - (a3 * a5 * a7) - (a1 * a6 * a8) - (a2 * a4 * a9);
-                        let Dx = (r1 * a5 * a9) + (a2 * a6 * r3) + (a3 * r2 * a8) - (a3 * a5 * r2) - (r1 * a6 * a8) - (a2 * r3 * a9);
-                        let Dy = (a1 * r2 * a9) + (r1 * a6 * a7) + (a3 * a4 * r3) - (a3 * a6 * a7) - (a1 * a4 * r3) - (r1 * a5 * a9);
-                        let Dz = (a1 * a5 * r3) + (a2 * r2 * a7) + (r1 * a4 * a8) - (r1 * a5 * a8) - (a1 * a7 * r2) - (a2 * a4 * r3);
-    
-                        if (determinante !== 0) {
-                            let X = Dx / determinante;
-                            let Y = Dy / determinante;
-                            let Z = Dz / determinante;
-                            resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br> X é: ${X.toFixed(2).replace('.', ',')}<br> Y é: ${Y.toFixed(2).replace('.', ',')}<br> Z é: ${Z.toFixed(2).replace('.', ',')}`;
-                        } else {
-                            resultado = "O sistema não tem uma solução única.";
-                        }
+                if (tipo === "2x2") {
+                    let a1 = parseFloat(document.getElementById("a11").value) || 0;
+                    let a2 = parseFloat(document.getElementById("a12").value) || 0;
+                    let a3 = parseFloat(document.getElementById("a21").value) || 0;
+                    let a4 = parseFloat(document.getElementById("a22").value) || 0;
+                    let r1 = parseFloat(document.getElementById("r1").value) || 0;
+                    let r2 = parseFloat(document.getElementById("r2").value) || 0;
+
+                    let determinante = a1 * a4 - a2 * a3;
+                    let Dx = r1 * a4 - r2 * a2;
+                    let Dy = a1 * r2 - a3 * r1;
+                    let DxD = Dx / determinante;
+                    let DyD = Dy / determinante;
+
+                    if (determinante !== 0) {
+                        resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br>Dx é: ${Dx.toFixed(2).replace('.', ',')}<br>Dy é: ${Dy.toFixed(2).replace('.', ',')}<br>X é: ${DxD.toFixed(2).replace('.', ',')}<br>Y é: ${DyD.toFixed(2).replace('.', ',')}`;
+                        resultado += `<br>Classificação: SPD`;                        
+                    } else if (determinante === 0 && Dx === 0 && Dy === 0) {
+                        resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
+                        resultado += `. Classificação: SPI`;
+                    } else {
+                        resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
+                        resultado += `. Classificação: SI`;
                     }
+                } else if (tipo === "3x3") {
+                    let a1 = parseFloat(document.getElementById("a11").value) || 0;
+                    let a2 = parseFloat(document.getElementById("a12").value) || 0;
+                    let a3 = parseFloat(document.getElementById("a13").value) || 0;
+                    let a4 = parseFloat(document.getElementById("a21").value) || 0;
+                    let a5 = parseFloat(document.getElementById("a22").value) || 0;
+                    let a6 = parseFloat(document.getElementById("a23").value) || 0;
+                    let a7 = parseFloat(document.getElementById("a31").value) || 0;
+                    let a8 = parseFloat(document.getElementById("a32").value) || 0;
+                    let a9 = parseFloat(document.getElementById("a33").value) || 0;
+                    let r1 = parseFloat(document.getElementById("r1").value) || 0;
+                    let r2 = parseFloat(document.getElementById("r2").value) || 0;
+                    let r3 = parseFloat(document.getElementById("r3").value) || 0;
+
+                    let determinante = (a1 * a5 * a9) + (a2 * a6 * a7) + (a3 * a4 * a8) - (a3 * a5 * a7) - (a1 * a6 * a8) - (a2 * a4 * a9);
+                    let Dx = (r1 * a5 * a9) + (a2 * a6 * r3) + (a3 * r2 * a8) - (a3 * a5 * r2) - (r1 * a6 * a8) - (a2 * r3 * a9);
+                    let Dy = (a1 * r2 * a9) + (r1 * a6 * a7) + (a3 * a4 * r3) - (a3 * a6 * a7) - (a1 * a4 * r3) - (r1 * a5 * a9);
+                    let Dz = (a1 * a5 * r3) + (a2 * r2 * a7) + (r1 * a4 * a8) - (r1 * a5 * a8) - (a1 * a7 * r2) - (a2 * a4 * r3);
+
+                    if (determinante !== 0) {
+                        let X = Dx / determinante;
+                        let Y = Dy / determinante;
+                        let Z = Dz / determinante;
+                        resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br> X é: ${X.toFixed(2).replace('.', ',')}<br> Y é: ${Y.toFixed(2).replace('.', ',')}<br> Z é: ${Z.toFixed(2).replace('.', ',')}`;
+                    } else {
+                        resultado = "O sistema não tem uma solução única.";
+                    }
+                }   
                 }
                 break;
             case 'RazãoeProporção':
@@ -189,6 +200,9 @@ function  displayAllNone() {
     document.getElementById("matrizTipo").style.display = "none";
     document.getElementById("sistemaLinearDiv2x2Div").style.display = "none";
     document.getElementById("sistemaLinearDiv3x3Div").style.display = "none";
+    document.getElementById("tipoMatriz").style.display = "none";
+    document.querySelector(".RazãoeProporção").style.display = "none";
+    document.querySelector(".raizDiv").style.display = "none";
 }
 
 function operacaoSelected() {
@@ -277,9 +291,12 @@ function operacaoSelected() {
                 }
             });
             break;
+        case 'raiz':
+            let raizDiv = document.querySelector(".raizDiv");
+            raizDiv.style.display = "block";
+            break;
         default:
         break;
-        
     }
 }
 
@@ -314,3 +331,4 @@ function duploFatorial(n) {
 
 document.getElementById("buttoncalcular").addEventListener("click", result);
 document.getElementById("calculoTipo").addEventListener("change", operacaoSelected);
+document.querySelector(".clearResult").addEventListener("click", limparResultado);

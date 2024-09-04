@@ -11,6 +11,7 @@
     <div class="container">
         <select id="calculoTipo">
             <option value="eval">Equação</option>
+            <option value="raiz">Raiz</option>
             <option value="porcentagem">Porcentagem</option>
             <option value="hipotenusa">Hipotenusa</option>
             <option value="bhaskara">Bhaskara</option>
@@ -23,8 +24,14 @@
             <option value="funcaoQuadratica">Função Quadratica</option>
             <option value="RazãoeProporção">Razão e Proporção</option>
         </select>
+
         <div id="input1Div" style="display: none">
             <input id="input1" class="number1" type="number" placeholder="Digite um numero">
+        </div>
+
+        <div class="raizDiv" style="display: none">
+            <input id="raiz1" class="number1" type="number" placeholder="Digite um numero">
+            <input id="raiz2" class="number1" type="number" placeholder="Digite a raiz">
         </div>
 
         <select id="matrizTipo" style="display: none">
@@ -125,6 +132,7 @@
         </div>
         
         <button id="buttoncalcular">Calcular</button>
+        <button class="clearResult">Limpar Resultado</button>
 
         <div style="display: none;" class="resultadoDiv">
             <h1>Resultado:</h1>

@@ -70,6 +70,20 @@
         /* Borda para o botão */
     }
 
+    .clearResult {
+        cursor: pointer;
+        background-color: red;
+        color: #fff;
+        border: 1px solid red;
+        /* Borda para o botão */
+    }
+
+    .clearResult:hover {
+        background-color: rgb(168, 14, 14);
+        border-color: rgb(168, 14, 14);
+        /* Muda a cor da borda no hover */
+    }
+
     button:hover {
         background-color: #0056b3;
         border-color: #0056b3;
@@ -184,6 +198,20 @@
     button:hover {
         background-color: #0056b3;
         border-color: #0056b3;
+        /* Muda a cor da borda no hover */
+    }
+
+    .clearResult {
+        cursor: pointer;
+        background-color: red;
+        color: #fff;
+        border: 1px solid red;
+        /* Borda para o botão */
+    }
+
+    .clearResult:hover {
+        background-color: rgb(168, 14, 14);
+        border-color: rgb(168, 14, 14);
         /* Muda a cor da borda no hover */
     }
 
