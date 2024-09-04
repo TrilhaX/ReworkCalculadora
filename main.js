@@ -247,10 +247,11 @@ function operacaoSelected() {
         case 'Matriz':
             displayNoneMatriz()
             matrizTipo.style.display = "block";
+            document.getElementById("matrizDiv2").style.display = "block";
             matrizTipo.addEventListener("change", function() {
                 switch (matrizTipo.value) {
                     case 'somaDeMatriz':
-                    document.getElementById("sistemaLinearDiv").style.display = "none";
+                        document.getElementById("sistemaLinearDiv").style.display = "none";
                         document.getElementById("matrizDiv2").style.display = "block";
                         break;
                     case 'multiplicacaoDeMatriz':
