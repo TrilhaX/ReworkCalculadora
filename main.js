@@ -1,6 +1,9 @@
+const history = [];
+
 function replaceSymbols(expression) {
     return expression
         .replace(/x/g, '*')
+        .replace(/X/g, '*')
         .replace(/÷/g, '/')
         .replace(/,/g, '.')
         .replace(/\^/g, '**') // Correctly replace `^` with `**`
@@ -237,6 +240,23 @@ function calcular() {
     return resultado;
 }
 
+function updateHistory() {
+    const historyDiv = document.getElementById('history');
+    historyDiv.innerHTML = '<h3>Histórico</h3>';
+    history.forEach(entry => {
+        const p = document.createElement('p');
+        historyDiv.style.textAlign = "center"
+        p.style.color = "white"
+        p.innerHTML = entry;
+        historyDiv.appendChild(p);
+    });
+}
+
+function clearHistory() {
+    history.length = 0;
+    updateHistory();
+}
+
 function  displayAllNone() {
     document.getElementById("input1Div").style.display = "none";
     document.getElementById("EvalDiv").style.display = "none";
@@ -263,7 +283,7 @@ function displayNoneMatriz(){
 }
 
 function operacaoSelected() {
-    displayAllNone(); // Suponho que esta função esteja definida para ocultar todas as divs antes de exibir a selecionada.
+    displayAllNone();
 
     const operacao = document.getElementById("calculoTipo").value;
 
@@ -275,7 +295,7 @@ function operacaoSelected() {
             document.getElementById("PorcentagemDiv").style.display = "block";
             break;
         case 'hipotenusa':
-        case 'teoremaDePitagoras': // Trate operações que devem exibir a mesma div aqui.
+        case 'teoremaDePitagoras':
             document.getElementById("PitagorasDiv").style.display = "block";
             break;
         case 'bhaskara':
@@ -283,7 +303,7 @@ function operacaoSelected() {
             document.getElementById("BhaskaraDiv").style.display = "block";
             break;
         case 'fatorial':
-        case 'duploFatorial': // Trate operações que devem exibir a mesma div aqui.
+        case 'duploFatorial':
             document.getElementById("input1Div").style.display = "block";
             break;
         case 'Trigonometria':
@@ -376,9 +396,14 @@ function operacaoSelected() {
 }
 
 function result() {
+    
     let resultado = calcular();
-    document.querySelector(".resultadoDiv").style.display = "block";
     document.getElementById("resultado").innerHTML = resultado;
+
+    history.push(`${resultado}`);
+    updateHistory();
+
+    document.querySelector(".resultadoDiv").style.display = "block";
 }
 
 function fatorial(n) {
@@ -407,3 +432,4 @@ function duploFatorial(n) {
 document.getElementById("buttoncalcular").addEventListener("click", result);
 document.getElementById("calculoTipo").addEventListener("change", operacaoSelected);
 document.querySelector(".clearResult").addEventListener("click", limparResultado);
+document.querySelector(".clearHistory").addEventListener("click", clearHistory)
