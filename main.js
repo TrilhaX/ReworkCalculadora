@@ -85,9 +85,57 @@ function calcular() {
                 const matrizTipo = document.getElementById("matrizTipo").value;
 
                 if (matrizTipo === "somaDeMatriz") {
-                    // Implementar soma de matriz
+                    let matrizA2 = document.getElementById("matrizA3");
+                    let matrizB2 = document.getElementById("matrizB3");
+                    let matrizC2 = document.getElementById("matrizC3");
+                    let matrizD2 = document.getElementById("matrizD3");
+                    let matrizA3 = document.getElementById("matrizA4");
+                    let matrizB3 = document.getElementById("matrizB4");
+                    let matrizC3 = document.getElementById("matrizC4");
+                    let matrizD3 = document.getElementById("matrizD4");
+                    let a1 = matrizA2.value;
+                    let b1 = matrizB2.value;
+                    let c1 = matrizC2.value;
+                    let d1 = matrizD2.value;
+    
+                    let a2 = matrizA3.value;
+                    let b2 = matrizB3.value;
+                    let c2 = matrizC3.value;
+                    let d2 = matrizD3.value;
+
+                    let aR = parseInt(a1) + parseInt(a2);
+                    let bR = parseInt(b1) + parseInt(b2);
+                    let cR = parseInt(c1) + parseInt(c2);
+                    let dR = parseInt(d1) + parseInt(d2);
+
+                    resultado = `A soma das matrizes é: ${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}<br>${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
+                    break;
                 } else if (matrizTipo === "multiplicacaoDeMatriz") {
-                    // Implementar multiplicação de matriz
+                    let matrizA2 = document.getElementById("matrizA3");
+                    let matrizB2 = document.getElementById("matrizB3");
+                    let matrizC2 = document.getElementById("matrizC3");
+                    let matrizD2 = document.getElementById("matrizD3");
+                    let matrizA3 = document.getElementById("matrizA4");
+                    let matrizB3 = document.getElementById("matrizB4");
+                    let matrizC3 = document.getElementById("matrizC4");
+                    let matrizD3 = document.getElementById("matrizD4");
+                    let a1 = matrizA2.value;
+                    let b1 = matrizB2.value;
+                    let c1 = matrizC2.value;
+                    let d1 = matrizD2.value;
+    
+                    let a2 = matrizA3.value;
+                    let b2 = matrizB3.value;
+                    let c2 = matrizC3.value;
+                    let d2 = matrizD3.value;
+    
+                    let aR = a1 * a2 + b1 * c2;
+                    let bR = a1 * b2 + b1 * d2;
+                    let cR = c1 * a2 + d1 * c2;
+                    let dR = c1 * b2 + d1 * d2;
+    
+                    resultado = `A multiplicação das matrizes é: ${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}<br>${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
+                    break;
                 } else if (matrizTipo === "sistemaLinear") {
                     let tipo = tipoMatriz.value;
 
@@ -251,8 +299,23 @@ function operacaoSelected() {
             matrizTipo.addEventListener("change", function() {
                 switch (matrizTipo.value) {
                     case 'somaDeMatriz':
-                        document.getElementById("sistemaLinearDiv").style.display = "none";
-                        document.getElementById("matrizDiv2").style.display = "block";
+                        let tipoMatrizSoma = document.getElementById("tipoMatrizSoma");
+                        let sistemaLinearDiv2 = document.getElementById("sistemaLinearDiv");
+                        document.getElementById("matrizDiv2").style.display = "none";
+                        sistemaLinearDiv2.style.display = "block";
+                        tipoMatrizSoma.style.display = "block";
+                        tipoMatrizSoma.addEventListener("change", () => {
+                            if (tipoMatrizSoma.value === "2x2"){
+                                document.querySelector(".somaDeMatriz2x2").style.display = "block";
+                                document.querySelector(".somaDeMatriz3x3").style.display = "none";
+                            }else if (tipoMatrizSoma.value === "3x3") {
+                                document.querySelector(".somaDeMatriz2x2").style.display = "none";
+                                document.querySelector(".somaDeMatriz3x3").style.display = "block";
+                            }else{
+                                document.querySelector(".somaDeMatriz2x2").style.display = "none";
+                                document.querySelector(".somaDeMatriz3x3").style.display = "none";
+                            }
+                        });
                         break;
                     case 'multiplicacaoDeMatriz':
                         document.getElementById("matrizDiv2").style.display = "block";
