@@ -8,12 +8,12 @@
     body {
         font-family: Arial, sans-serif;
         display: flex;
+        flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        height: 150vh;
+        height: 210vh;
         background-color: purple
     }
-
 
     .container {
         border: 2px solid #ccc;
@@ -21,11 +21,59 @@
         padding: 20px;
         background-color: #fff;
         width: 80%;
-        max-width: 600px;
+        max-width: 300px;
         text-align: center;
     }
 
-    #calculoTipo {
+    .historyCU {
+        border: 1px solid black;
+        background-color: gray;
+        width: 100%;
+        max-width: 300px;
+        height: 50vh;
+        border-radius: 10px;
+    }
+
+    .history {
+        padding-top: 10px;
+        height: 40vh;
+        overflow-y: scroll;
+        background-color: #f2f2f200;
+        text-align: center;
+        color: white;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8vh;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: #ffffff;
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    .clearHistory {
+        cursor: pointer;
+        background-color: red;
+        color: #fff;
+        border: 1px solid red;
+        height: 6vh;
+    }
+
+    .clearHistory:hover {
+        cursor: pointer;
+        background-color: rgb(194, 2, 2);
+        color: #fff;
+        border: 1px solid rgb(194, 2, 2);
+        height: 6vh;
+    }
+
+    .calculoTipo {
         margin-bottom: 5px;
         padding: 10px;
         border: 1px solid #ccc;
@@ -33,7 +81,7 @@
         justify-content: center;
     }
 
-    #tipoMatriz {
+    .matrizTipo {
         margin: 0 auto;
         padding: 10px;
         border: 1px solid #ccc;
@@ -44,9 +92,48 @@
         display: block;
     }
 
-    #sistemaLinearDiv {
+    .tipoMatriz {
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .razaoouproporção {
+        margin: 0 auto;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .tipoMatrizSoma {
+        margin: 5px auto;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+
+    .sistemaLinearDiv {
         text-align: center;
-        margin-top: 20px;
+        margin-top: 5px;
+    }
+
+    .sistemaLinearDiv {
+        text-align: center;
+        margin-top: 5px;
     }
 
     input,
@@ -92,6 +179,17 @@
         color: #333;
         display: block;
     }
+
+    .resultado {
+        border: 1px solid black;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 650px) and (max-width: 50000px) {
@@ -108,6 +206,10 @@
         align-items: center;
         height: 130vh;
         background-color: purple
+    }
+
+    .container h1{
+        margin-bottom: 10px;
     }
 
     .container {
@@ -129,11 +231,12 @@
         border-radius: 10px;
     }
 
-    #history {
+    .history {
         height: 32vh;
         overflow-y: scroll;
         background-color: #f2f2f200;
         text-align: center;
+        color: white;
         margin-top: 10px;
     }
 
@@ -167,7 +270,7 @@
         height: 5vh;
     }
 
-    #calculoTipo {
+    .calculoTipo {
         margin-bottom: 5px;
         padding: 10px;
         border: 1px solid #ccc;
@@ -175,7 +278,7 @@
         justify-content: center;
     }
 
-    #matrizTipo {
+    .matrizTipo {
         margin: 0 auto;
         padding: 10px;
         border: 1px solid #ccc;
@@ -186,7 +289,7 @@
         display: block;
     }
 
-    #tipoMatriz {
+    .tipoMatriz {
         margin: 0 auto;
         padding: 5px;
         border: 1px solid #ccc;
@@ -197,7 +300,7 @@
         display: block;
     }
 
-    #razaoouproporção {
+    .razaoouproporção {
         margin: 0 auto;
         padding: 5px;
         border: 1px solid #ccc;
@@ -208,7 +311,18 @@
         display: block;
     }
 
-    #tipoMatrizSoma {
+    .tipoMatrizSoma {
+        margin: 5px auto;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .geometriaTipo {
         margin: 5px auto;
         padding: 5px;
         border: 1px solid #ccc;
@@ -220,7 +334,7 @@
     }
 
 
-    #sistemaLinearDiv {
+    .sistemaLinearDiv {
         text-align: center;
         margin-top: 5px;
     }
@@ -270,7 +384,7 @@
         display: block;
     }
 
-    #resultado {
+    .resultado {
         border: 1px solid black;
         padding: 10px;
         margin-top: 20px;
