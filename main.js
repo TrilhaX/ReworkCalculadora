@@ -1,5 +1,114 @@
 const history = [];
 
+function fatorial(n) {
+    if (n < 0) return "Não definido para números negativos";
+    if (n === 0) return 1;
+
+    let resultado = 1;
+    for (let i = n; i > 1; i--) {
+        resultado *= i;
+    }
+    return resultado;
+}
+
+function duploFatorial(n) {
+    if (n < 0) return "Não definido para números negativos";
+    if (n === 0 || n === 1) return 1;
+
+    let resultado = 1;
+    for (let i = n; i > 1; i -= 2) {
+        resultado *= i;
+    }
+    return resultado;
+}
+
+function distancia(x1, y1, x2, y2) {
+    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+}
+
+function perimetroCirculo(raio, PI) {
+    return 2 * PI * raio;
+}
+
+function areaCirculo(raio, PI) {
+    return PI * raio ** 2;
+}
+
+function areaRetangulo(largura, altura) {
+    return largura * altura;
+}
+
+function perimetroRetangulo(largura, altura) {
+    return 2 * (largura + altura);
+}
+
+function areaTriangulo(base, altura) {
+    return (base * altura) / 2;
+}
+
+function perimetroTriangulo(a, b, c) {
+    return a + b + c;
+}
+
+function areaTrianguloHero(a, b, c) {
+    const s = (a + b + c) / 2;
+    return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+}
+
+function areaTrapezio(baseMaior, baseMenor, altura) {
+    return ((baseMaior + baseMenor) * altura) / 2;
+}
+
+function areaParalelogramo(base, altura) {
+    return base * altura;
+}
+
+function areaLosango(d1, d2) {
+    return (d1 * d2) / 2;
+}
+
+function areaQuadrado(lado) {
+    return lado ** 2;
+}
+
+function perimetroQuadrado(lado) {
+    return 4 * lado;
+}
+
+function volumeCubo(lado) {
+    return lado ** 3;
+}
+
+function volumeParalelepipedo(comprimento, largura, altura) {
+    return comprimento * largura * altura;
+}
+
+function volumeEsfera(raio, PI) {
+    return (4 / 3) * PI * raio ** 3;
+}
+
+function areaEsfera(raio, PI) {
+    return 4 * PI * raio ** 2;
+}
+
+function volumeCilindro(raio, altura, PI) {
+    return PI * raio ** 2 * altura;
+}
+
+function areaCilindro(raio, altura, PI) {
+    return 2 * PI * raio * (raio + altura);
+}
+
+function volumeCone(raio, altura, PI) {
+    return (1 / 3) * PI * raio ** 2 * altura;
+}
+
+function areaCone(raio, altura, PI) {
+    const geratriz = Math.sqrt(raio ** 2 + altura ** 2);
+    return PI * raio * (raio + geratriz);
+}
+
+
 function replaceSymbols(expression) {
     return expression
         .replace(/x/g, '*')
@@ -15,7 +124,7 @@ function limparResultado(){
 
 function calcular() {
     const operacao = document.querySelector(".calculoTipo").value;
-    let resultado = 0;
+    let resultado
     let num1 = parseFloat(document.querySelector(".input1").value) || 0;
 
     if (operacao === 'eval') {
@@ -214,24 +323,6 @@ function calcular() {
                     resultado = "Operação não reconhecida.";
                 }
                 break;
-            case 'funcaoQuadratica':
-                const A3 = parseInt(document.querySelector(".BA").value);
-                const B3 = parseInt(document.querySelector(".BB").value);
-                const C2 = parseInt(document.querySelector(".BC").value);
-                const delta2 = B3 * B3 - 4 * A3 * C2
-                if (delta2 < 0) {
-                    resultado = "Delta negativo, sem raízes reais.";
-                } else {
-                    const x1 = (-B3 + Math.sqrt(delta2)) / (2 * A3);
-                    const x2 = (-B3 - Math.sqrt(delta2)) / (2 * A3);
-                    const Xv = -B3 / (2 * A3);
-                    const Yv = -delta2 / (4 * A3);
-                    const EY = C2;
-                    resultado = `Raízes da função: x1= (${x1}, 0), x2= (${x2},0)<br>
-                     Vertice da parabola: (${Xv}, ${Yv})<br>
-                     Ponto de intersecção com o eixo Y: (0, ${EY})`;
-                }
-                break;
             case 'geometria':
                 let geometriaTipoDiv2 = document.querySelector(".geometriaTipo").value;
                 
@@ -316,7 +407,7 @@ function calcular() {
                     let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
                     resultado = areaCone(cone, geratriz, piInput);
                 } else if (geometriaTipoDiv2 === 'volumeCone') {
-                    let cone = parseFloat(document.querySelector(".raiocone").value) || 0;
+                    let cone = parseFloat(document.querySelector(".raioCone").value) || 0;
                     let geratriz = parseFloat(document.querySelector(".alturaCone").value) || 0;
                     let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
                     resultado = volumeCone(cone, geratriz, piInput);
@@ -329,7 +420,47 @@ function calcular() {
                 } else {
                     resultado = "Selecione uma operação válida.";
                 }
-                break;                               
+                break;   
+                case 'funcao':
+                    let funcaoTipo = document.querySelector(".funcaoTipo");        
+                
+                    if (funcaoTipo.value === 'funcaoQuadratica') {
+                        const A3 = parseFloat(document.querySelector(".BA").value);
+                        const B3 = parseFloat(document.querySelector(".BB").value);
+                        const C2 = parseFloat(document.querySelector(".BC").value);
+                        const delta2 = B3 * B3 - 4 * A3 * C2;
+                
+                        if (delta2 < 0) {
+                            resultado = "Delta negativo, sem raízes reais.";
+                        } else {
+                            const x1 = (-B3 + Math.sqrt(delta2)) / (2 * A3);
+                            const x2 = (-B3 - Math.sqrt(delta2)) / (2 * A3);
+                            const Xv = -B3 / (2 * A3);
+                            const Yv = -delta2 / (4 * A3);
+                            const EY = C2;
+                            resultado = `Raízes da função: x1= (${x1.toFixed(2)}, 0), x2= (${x2.toFixed(2)}, 0)<br>
+                                         Vértice da parábola: (${Xv.toFixed(2)}, ${Yv.toFixed(2)})<br>
+                                         Ponto de interseção com o eixo Y: (0, ${EY.toFixed(2)})`;
+                        }
+                    } else if (funcaoTipo.value === 'funcaoExponencial') {
+                        function funcaoExponencial(x, a) {
+                            return Math.pow(a, x);
+                        }
+                
+                        const valoresX = [-3, -2, -1, 0, 1, 2, 3];
+                        const inputA = document.querySelector(".funcaoExponencialInput");
+                        const a = parseFloat(inputA.value);
+                
+                        if (isNaN(a)) {
+                            resultado = "Valor de 'a' inválido.";
+                        } else {
+                            const resultados = valoresX.map(x => funcaoExponencial(x, a));
+                            resultado = valoresX.map((x, index) => `f(${x}) = ${resultados[index].toFixed(2)}`).join('<br>');
+                        }
+                    } else {
+                        resultado = "Tipo de função não implementado.";
+                    }
+                    break;
             default:
                 resultado = "Operação não implementada.";
             break;
@@ -385,16 +516,59 @@ function  displayAllNone() {
     document.querySelector(".distanciaDoisPontos").style.display = "none";
     document.querySelector(".piInputDiv").style.display = "none";
     document.querySelector(".sistemaLinearDiv").style.display = "none";
+    document.querySelector(".funcaoTipo").style.display = "none";
+    document.querySelector(".geometriaTipo").style.display = "none";
+    document.querySelector(".inputNormal").style.display = "none";
 }
 
-function displayNoneExtra(){
+function displayNoneExtra() {
+    // Oculta divs específicas
+    document.querySelector(".input1Div").style.display = "none";
+    document.querySelector(".input1Div2").style.display = "none";
+    document.querySelector(".EvalDiv").style.display = "none";
+    document.querySelector(".PorcentagemDiv").style.display = "none";
+    document.querySelector(".PitagorasDiv").style.display = "none";
+    document.querySelector(".BhaskaraDiv").style.display = "none";
+    document.querySelector(".TrigonometriaDiv").style.display = "none";
+    document.querySelector(".LogDiv").style.display = "none";
+    document.querySelector(".matrizTipo").style.display = "none";
     document.querySelector(".matrizDiv2").style.display = "none";
     document.querySelector(".sistemaLinearDiv2x2Div").style.display = "none";
     document.querySelector(".sistemaLinearDiv3x3Div").style.display = "none";
-    document.querySelector(".geometriaTipo").style.display = "none";
+    document.querySelector(".tipoMatriz").style.display = "none";
+    document.querySelector(".RazãoeProporção").style.display = "none";
+    document.querySelector(".raizDiv").style.display = "none";
+    document.querySelector(".areaRetangulo").style.display = "none";
     document.querySelector(".areaLosango").style.display = "none";
+    document.querySelector(".altura").style.display = "none";
+    document.querySelector(".largura").style.display = "none";
+    document.querySelector(".areaTriangulo").style.d1isplay = "none";
+    document.querySelector(".areaTrapezio").style.display = "none";
+    document.querySelector(".areaParalelogramo").style.display = "none";
+    document.querySelector(".areaQuadrado").style.display = "none";
+    document.querySelector(".volumeParalelepipedo").style.display = "none";
+    document.querySelector(".areaCilindro").style.display = "none";
+    document.querySelector(".distanciaDoisPontos").style.display = "none";
+    document.querySelector(".piInputDiv").style.display = "none";
     document.querySelector(".sistemaLinearDiv").style.display = "none";
+    document.querySelector(".funcaoTipo").style.display = "none";
+    document.querySelector(".inputNormal").style.display = "none";
+
+    // Oculta elementos com classes específicas
+    document.querySelector(".funcaoTipo").style.display = "none";
+    document.querySelector(".areaRetangulo").style.display = "none";
+    document.querySelector(".altura").style.display = "none";
+    document.querySelector(".largura").style.display = "none";
+    document.querySelector(".areaTriangulo").style.display = "none";
+    document.querySelector(".areaLosango").style.display = "none"
+    document.querySelector(".areaTrapezio").style.display = "none";
+    document.querySelector(".areaParalelogramo").style.display = "none";
+    document.querySelector(".areaQuadrado").style.display = "none";
+    document.querySelector(".volumeParalelepipedo").style.display = "none";
+    document.querySelector(".areaCilindro").style.display = "none";
+    document.querySelector(".distanciaDoisPontos").style.display = "none";
 }
+
 
 function operacaoSelected() {
     displayAllNone();
@@ -413,8 +587,22 @@ function operacaoSelected() {
             document.querySelector(".PitagorasDiv").style.display = "block";
             break;
         case 'bhaskara':
-        case 'funcaoQuadratica':
-            document.querySelector(".BhaskaraDiv").style.display = "block";
+        case 'funcao':
+            let funcaoQuadratica = document.querySelector('.BhaskaraDiv');
+            let funcaoTipo = document.querySelector(".funcaoTipo");
+            funcaoTipo.style.display = "block"
+            document.querySelector(".inputNormal").style.display = "block";
+            funcaoTipo.addEventListener("change", function(){
+                if (funcaoTipo.value === "funcaoExponencial"){
+                    document.querySelector(".inputNormal").style.display = "block";
+                    funcaoQuadratica.style.display = "none"
+                }else if (funcaoTipo.value === "funcaoQuadratica"){
+                    document.querySelector(".inputNormal").style.display = "none";
+                    funcaoQuadratica.style.display = "block"
+                }else{
+                    resultado = `Não Existe`
+                }
+            });
             break;
         case 'fatorial':
         case 'duploFatorial':
@@ -538,7 +726,7 @@ function operacaoSelected() {
             input1.style.display = "block";
             PI.style.display = "block";
             geometriaTipo.addEventListener("change", function() {
-                displayAllNone()
+                displayNoneExtra()
                 if (geometriaTipo.value === 'perimetroCirculo' || geometriaTipo.value === 'areaCirculo' || geometriaTipo.value === 'areaEsfera' || geometriaTipo.value === 'volumeEsfera') {
                     input1.style.display = "block";
                     PI.style.display = "block";
@@ -580,120 +768,12 @@ function result() {
     let resultado = calcular();
     document.querySelector(".resultado").innerHTML = resultado;
 
-    if (!isNaN(resultado)) { // Verifica se 'resultado' é um número
-        history.push(resultado); // Adiciona apenas números ao array
-        updateHistory(); // Atualiza o histórico
+    if (!isNaN(resultado)) {
+        history.push(resultado);
+        updateHistory();
     }    
 
     document.querySelector(".resultadoDiv").style.display = "block";
-}
-
-function fatorial(n) {
-    if (n < 0) return "Não definido para números negativos";
-    if (n === 0) return 1;
-
-    let resultado = 1;
-    for (let i = n; i > 1; i--) {
-        resultado *= i;
-    }
-    return resultado;
-}
-
-function duploFatorial(n) {
-    if (n < 0) return "Não definido para números negativos";
-    if (n === 0 || n === 1) return 1;
-
-    let resultado = 1;
-    for (let i = n; i > 1; i -= 2) {
-        resultado *= i;
-    }
-    return resultado;
-}
-
-function distancia(x1, y1, x2, y2) {
-    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-}
-
-function perimetroCirculo(raio, PI) {
-    return 2 * PI * raio;
-}
-
-function areaCirculo(raio, PI) {
-    return PI * raio ** 2;
-}
-
-function areaRetangulo(largura, altura) {
-    return largura * altura;
-}
-
-function perimetroRetangulo(largura, altura) {
-    return 2 * (largura + altura);
-}
-
-function areaTriangulo(base, altura) {
-    return (base * altura) / 2;
-}
-
-function perimetroTriangulo(a, b, c) {
-    return a + b + c;
-}
-
-function areaTrianguloHero(a, b, c) {
-    const s = (a + b + c) / 2;
-    return Math.sqrt(s * (s - a) * (s - b) * (s - c));
-}
-
-function areaTrapezio(baseMaior, baseMenor, altura) {
-    return ((baseMaior + baseMenor) * altura) / 2;
-}
-
-function areaParalelogramo(base, altura) {
-    return base * altura;
-}
-
-function areaLosango(d1, d2) {
-    return (d1 * d2) / 2;
-}
-
-function areaQuadrado(lado) {
-    return lado ** 2;
-}
-
-function perimetroQuadrado(lado) {
-    return 4 * lado;
-}
-
-function volumeCubo(lado) {
-    return lado ** 3;
-}
-
-function volumeParalelepipedo(comprimento, largura, altura) {
-    return comprimento * largura * altura;
-}
-
-function volumeEsfera(raio, PI) {
-    return (4 / 3) * PI * raio ** 3;
-}
-
-function areaEsfera(raio, PI) {
-    return 4 * PI * raio ** 2;
-}
-
-function volumeCilindro(raio, altura, PI) {
-    return PI * raio ** 2 * altura;
-}
-
-function areaCilindro(raio, altura, PI) {
-    return 2 * PI * raio * (raio + altura);
-}
-
-function volumeCone(raio, altura, PI) {
-    return (1 / 3) * PI * raio ** 2 * altura;
-}
-
-function areaCone(raio, altura, PI) {
-    const geratriz = Math.sqrt(raio ** 2 + altura ** 2);
-    return PI * raio * (raio + geratriz);
 }
 
 document.querySelector(".buttoncalcular").addEventListener("click", result);

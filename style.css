@@ -300,6 +300,17 @@
         display: block;
     }
 
+    .funcaoTipo {
+        margin: 0 auto;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
+
     .razaoouproporção {
         margin: 0 auto;
         padding: 5px;
