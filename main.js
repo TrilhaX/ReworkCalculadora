@@ -467,7 +467,7 @@ function calcular() {
                 
         }
     }
-    return resultado;
+    return resultado
 }
 
 function updateHistory() {
@@ -587,6 +587,9 @@ function operacaoSelected() {
             document.querySelector(".PitagorasDiv").style.display = "block";
             break;
         case 'bhaskara':
+            let bhaskara = document.querySelector('.BhaskaraDiv');
+            bhaskara.style.display = "block";
+            break;
         case 'funcao':
             let funcaoQuadratica = document.querySelector('.BhaskaraDiv');
             let funcaoTipo = document.querySelector(".funcaoTipo");
