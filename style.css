@@ -73,6 +73,39 @@
         height: 6vh;
     }
 
+    
+    .mostrarCalculo {
+        cursor: pointer;
+        background-color: green;
+        color: #fff;
+        border: 1px solid green;
+        height: 5vh;
+    }
+
+    .mostrarCalculo:hover {
+        cursor: pointer;
+        background-color: rgb(0, 94, 0);
+        color: #fff;
+        border: 1px solid rgb(0, 94, 0);
+        height: 5vh;
+    }
+
+    .clearCalulo {
+        cursor: pointer;
+        background-color: red;
+        color: #fff;
+        border: 1px solid red;
+        height: 5vh;
+    }
+
+    .clearCalulo:hover {
+        cursor: pointer;
+        background-color: rgb(194, 2, 2);
+        color: #fff;
+        border: 1px solid rgb(194, 2, 2);
+        height: 5vh;
+    }
+
     .calculoTipo {
         margin-bottom: 5px;
         padding: 10px;
@@ -93,6 +126,17 @@
     }
 
     .tipoMatriz {
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .progressaoTipo {
         margin: 0 auto;
         padding: 10px;
         border: 1px solid #ccc;
@@ -204,7 +248,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 130vh;
+        height: 140vh;
         background-color: purple
     }
 
@@ -270,6 +314,38 @@
         height: 5vh;
     }
 
+    .mostrarCalculo {
+        cursor: pointer;
+        background-color: green;
+        color: #fff;
+        border: 1px solid green;
+        height: 5vh;
+    }
+
+    .mostrarCalculo:hover {
+        cursor: pointer;
+        background-color: rgb(0, 94, 0);
+        color: #fff;
+        border: 1px solid rgb(0, 94, 0);
+        height: 5vh;
+    }
+
+    .clearCalulo {
+        cursor: pointer;
+        background-color: red;
+        color: #fff;
+        border: 1px solid red;
+        height: 5vh;
+    }
+
+    .clearCalulo:hover {
+        cursor: pointer;
+        background-color: rgb(194, 2, 2);
+        color: #fff;
+        border: 1px solid rgb(194, 2, 2);
+        height: 5vh;
+    }
+
     .calculoTipo {
         margin-bottom: 5px;
         padding: 10px;
@@ -301,6 +377,17 @@
     }
 
     .funcaoTipo {
+        margin: 0 auto;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .progressaoTipo {
         margin: 0 auto;
         padding: 5px;
         border: 1px solid #ccc;

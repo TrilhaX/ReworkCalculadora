@@ -1,5 +1,7 @@
+//Arrays//
 const history = [];
 
+//Functions Dos Calculos//
 function fatorial(n) {
     if (n < 0) return "Não definido para números negativos";
     if (n === 0) return 1;
@@ -22,93 +24,393 @@ function duploFatorial(n) {
     return resultado;
 }
 
-function distancia(x1, y1, x2, y2) {
-    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+function perimetroCirculo() {
+    let raio = parseFloat(document.querySelector(".input12").value) || 0;
+    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
+    return 2 * piInput * raio;
 }
 
-function perimetroCirculo(raio, PI) {
-    return 2 * PI * raio;
+function areaCirculo() {
+    let raio = parseFloat(document.querySelector(".input12").value) || 0;
+    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
+    return piInput * raio ** 2;
 }
 
-function areaCirculo(raio, PI) {
-    return PI * raio ** 2;
-}
-
-function areaRetangulo(largura, altura) {
+function areaRetangulo() {
+    let largura = parseFloat(document.querySelector(".larguraRetangulo").value) || 0;
+    let altura = parseFloat(document.querySelector(".alturaRetangulo").value) || 0;
     return largura * altura;
 }
 
-function perimetroRetangulo(largura, altura) {
+function perimetroRetangulo() {
+    let largura = parseFloat(document.querySelector(".larguraRetangulo").value) || 0;
+    let altura = parseFloat(document.querySelector(".alturaRetangulo").value) || 0;
     return 2 * (largura + altura);
 }
 
-function areaTriangulo(base, altura) {
+function areaTriangulo() {
+    let base = parseFloat(document.querySelector(".baseTriangulo").value) || 0;
+    let altura = parseFloat(document.querySelector(".alturaTriangulo").value) || 0;
     return (base * altura) / 2;
 }
 
-function perimetroTriangulo(a, b, c) {
+function perimetroTriangulo() {
+    let a = parseFloat(document.querySelector(".BA").value) || 0;
+    let b = parseFloat(document.querySelector(".BB").value) || 0;
+    let c = parseFloat(document.querySelector(".BC").value) || 0;
     return a + b + c;
 }
 
-function areaTrianguloHero(a, b, c) {
+function areaTrianguloHero() {
+    let a = parseFloat(document.querySelector(".BA").value) || 0;
+    let b = parseFloat(document.querySelector(".BB").value) || 0;
+    let c = parseFloat(document.querySelector(".BC").value) || 0;
     const s = (a + b + c) / 2;
     return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
-function areaTrapezio(baseMaior, baseMenor, altura) {
+function areaTrapezio() {
+    let baseMaior = parseFloat(document.querySelector(".baseMaior").value) || 0;
+    let baseMenor = parseFloat(document.querySelector(".baseMenor").value) || 0;
+    let altura = parseFloat(document.querySelector(".altura").value) || 0;
     return ((baseMaior + baseMenor) * altura) / 2;
 }
 
-function areaParalelogramo(base, altura) {
+function areaParalelogramo() {
+    let base = parseFloat(document.querySelector(".baseParalelogramo").value) || 0;
+    let altura = parseFloat(document.querySelector(".alturaParalelogramo").value) || 0;
     return base * altura;
 }
 
-function areaLosango(d1, d2) {
+function areaLosango() {
+    let d1 = parseFloat(document.querySelector(".diagonalMenor").value) || 0;
+    let d2 = parseFloat(document.querySelector(".diagonalMaior").value) || 0;
     return (d1 * d2) / 2;
 }
 
-function areaQuadrado(lado) {
+function areaQuadrado() {
+    let lado = parseFloat(document.querySelector(".ladoQuadrado").value) || 0;
     return lado ** 2;
 }
 
-function perimetroQuadrado(lado) {
+function perimetroQuadrado() {
+    let lado = parseFloat(document.querySelector(".ladoQuadrado").value) || 0;
     return 4 * lado;
 }
 
-function volumeCubo(lado) {
+function volumeCubo() {
+    let lado = parseFloat(document.querySelector(".ladoQuadrado").value) || 0;
     return lado ** 3;
 }
 
-function volumeParalelepipedo(comprimento, largura, altura) {
+function volumeParalelepipedo() {
+    let comprimento = parseFloat(document.querySelector(".comprimento").value) || 0;
+    let largura = parseFloat(document.querySelector(".largura").value) || 0;
+    let altura = parseFloat(document.querySelector(".altura").value) || 0;
     return comprimento * largura * altura;
 }
 
-function volumeEsfera(raio, PI) {
-    return (4 / 3) * PI * raio ** 3;
+function volumeEsfera() {
+    let raio = parseFloat(document.querySelector(".input12").value) || 0;
+    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
+    return (4 / 3) * piInput * raio ** 3;
 }
 
-function areaEsfera(raio, PI) {
-    return 4 * PI * raio ** 2;
+function areaEsfera() {
+    let raio = parseFloat(document.querySelector(".input12").value) || 0;
+    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
+    return 4 * piInput * raio ** 2;
 }
 
-function volumeCilindro(raio, altura, PI) {
-    return PI * raio ** 2 * altura;
+function volumeCilindro() {
+    let raio = parseFloat(document.querySelector(".raioCilindro").value) || 0;
+    let altura = parseFloat(document.querySelector(".alturaCilindro").value) || 0;
+    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
+    return piInput * raio ** 2 * altura;
 }
 
-function areaCilindro(raio, altura, PI) {
-    return 2 * PI * raio * (raio + altura);
+function areaCilindro() {
+    let raio = parseFloat(document.querySelector(".raioCilindro").value) || 0;
+    let altura = parseFloat(document.querySelector(".alturaCilindro").value) || 0;
+    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
+    return 2 * piInput * raio * (raio + altura);
 }
 
-function volumeCone(raio, altura, PI) {
-    return (1 / 3) * PI * raio ** 2 * altura;
+function volumeCone() {
+    let raio = parseFloat(document.querySelector(".raioCone").value) || 0;
+    let altura = parseFloat(document.querySelector(".alturaCone").value) || 0;
+    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
+    return (1 / 3) * piInput * raio ** 2 * altura;
 }
 
-function areaCone(raio, altura, PI) {
+function areaCone() {
+    let raio = parseFloat(document.querySelector(".raioCone").value) || 0;
+    let altura = parseFloat(document.querySelector(".alturaCone").value) || 0;
+    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
     const geratriz = Math.sqrt(raio ** 2 + altura ** 2);
-    return PI * raio * (raio + geratriz);
+    return piInput * raio * (raio + geratriz);
 }
 
+function distancia() {
+    let x1 = parseFloat(document.querySelector(".x1").value) || 0;
+    let y1 = parseFloat(document.querySelector(".y1").value) || 0;
+    let x2 = parseFloat(document.querySelector(".x2").value) || 0;
+    let y2 = parseFloat(document.querySelector(".y2").value) || 0;
+    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+}
 
+function raizCalculo() {
+    let raiz1 = parseInt(document.querySelector(".raiz1").value);
+    let raiz2 = parseInt(document.querySelector(".raiz2").value);
+
+    let raizR = Math.pow(raiz1, 1 / raiz2);
+    return raizR;
+}
+
+function porcentagem(){
+    const numero = parseFloat(document.querySelector(".numero").value);
+    const porcentagem = parseFloat(document.querySelector(".porcentagem").value);
+    return (numero * porcentagem) / 100;
+}
+
+function hipotenusa(){
+    const A = parseFloat(document.querySelector(".A").value);
+    const B = parseFloat(document.querySelector(".B").value);
+    return Math.sqrt(A * A + B * B);
+}
+
+function bhaskara(){
+    const A2 = parseFloat(document.querySelector(".BA").value);
+    const B2 = parseFloat(document.querySelector(".BB").value);
+    const C = parseFloat(document.querySelector(".BC").value);
+    const delta = B2 * B2 - 4 * A2 * C;
+    if (delta < 0) {
+        return "Delta negativo, sem raízes reais.";
+    } else {
+        const x1 = (-BB + Math.sqrt(delta)) / (2 * BA);
+        const x2 = (-BB - Math.sqrt(delta)) / (2 * BA);
+        return `Delta =  ${delta}<br> x1 = ${x1}<br> x2 = ${x2}`;
+    }
+}
+
+function teoremaDePitagoras(){
+    let valor1 = parseFloat(document.querySelector(".A").value);
+    let valor2 = parseFloat(document.querySelector(".B").value);
+    return Math.sqrt(valor1 * valor1 + valor2 * valor2);  
+}
+
+function trigonometria(){
+    const angleInDegrees = parseFloat(document.querySelector(".trigonometria").value);
+    const angleInRadians = angleInDegrees * (PI / 180);
+    const cosine = Math.cos(angleInRadians);
+    const sine = Math.sin(angleInRadians);
+    const tangent = Math.tan(angleInRadians);
+            
+    return `Cosseno: ${cosine.toFixed(2).replace('.', ',')}<br>Seno: ${sine.toFixed(2).replace('.', ',')}<br>Tangente: ${tangent.toFixed(2).replace('.', ',')}`;
+}
+
+function log(){
+    const base = parseFloat(document.querySelector(".logaritmo").value);
+    const valor = parseFloat(document.querySelector(".logaritmando").value);
+    return Math.log(valor) / Math.log(base);
+}
+
+function evalExpression() {
+    let expressao = document.querySelector(".expressao").value;
+    expressao = replaceSymbols(expressao);
+
+    try {
+        return `${eval(expressao)}`;  // Executa a expressão usando eval
+    } catch (error) {
+        return "Erro na expressão!";  // Captura erros na expressão
+    }
+}
+
+function somaDeMatriz(){
+    let matrizA2 = document.querySelector(".matrizA3");
+    let matrizB2 = document.querySelector(".matrizB3");
+    let matrizC2 = document.querySelector(".matrizC3");
+    let matrizD2 = document.querySelector(".matrizD3");
+    let matrizA3 = document.querySelector(".matrizA4");
+    let matrizB3 = document.querySelector(".matrizB4");
+    let matrizC3 = document.querySelector(".matrizC4");
+    let matrizD3 = document.querySelector(".matrizD4");
+    let a1 = matrizA2.value;
+    let b1 = matrizB2.value;
+    let c1 = matrizC2.value;
+    let d1 = matrizD2.value;
+
+    let a2 = matrizA3.value;
+    let b2 = matrizB3.value;
+    let c2 = matrizC3.value;
+    let d2 = matrizD3.value;
+
+    let aR = parseInt(a1) + parseInt(a2);
+    let bR = parseInt(b1) + parseInt(b2);
+    let cR = parseInt(c1) + parseInt(c2);
+    let dR = parseInt(d1) + parseInt(d2);
+
+    return `A soma das matrizes é: ${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}<br>${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
+}
+
+function multiplicacaoDeMatriz(){
+    let matrizA2 = document.querySelector(".matrizA3");
+    let matrizB2 = document.querySelector(".matrizB3");
+    let matrizC2 = document.querySelector(".matrizC3");
+    let matrizD2 = document.querySelector(".matrizD3");
+    let matrizA3 = document.querySelector(".matrizA4");
+    let matrizB3 = document.querySelector(".matrizB4");
+    let matrizC3 = document.querySelector(".matrizC4");
+    let matrizD3 = document.querySelector(".matrizD4");
+    let a1 = matrizA2.value;
+    let b1 = matrizB2.value;
+    let c1 = matrizC2.value;
+    let d1 = matrizD2.value;
+
+    let a2 = matrizA3.value;
+    let b2 = matrizB3.value;
+    let c2 = matrizC3.value;
+    let d2 = matrizD3.value;
+
+    let aR = a1 * a2 + b1 * c2;
+    let bR = a1 * b2 + b1 * d2;
+    let cR = c1 * a2 + d1 * c2;
+    let dR = c1 * b2 + d1 * d2;
+
+    return `A multiplicação das matrizes é: ${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}<br>${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
+}
+
+function matriz2x2(){
+    let a1 = parseFloat(document.querySelector(".a11").value) || 0;
+    let a2 = parseFloat(document.querySelector(".a12").value) || 0;
+    let a3 = parseFloat(document.querySelector(".a21").value) || 0;
+    let a4 = parseFloat(document.querySelector(".a22").value) || 0;
+    let r1 = parseFloat(document.querySelector(".r1").value) || 0;
+    let r2 = parseFloat(document.querySelector(".r2").value) || 0;
+
+    let determinante = a1 * a4 - a2 * a3;
+    let Dx = r1 * a4 - r2 * a2;
+    let Dy = a1 * r2 - a3 * r1;
+    let DxD = Dx / determinante;
+    let DyD = Dy / determinante;
+
+    if (determinante !== 0) {
+        return `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br>Dx é: ${Dx.toFixed(2).replace('.', ',')}<br>Dy é: ${Dy.toFixed(2).replace('.', ',')}<br>X é: ${DxD.toFixed(2).replace('.', ',')}<br>Y é: ${DyD.toFixed(2).replace('.', ',')}<br>Classificação: SPD`;                        
+    } else if (determinante === 0 && Dx === 0 && Dy === 0) {
+        return `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}. Classificação: SPI`;
+    } else {
+        return `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}. Classificação: SI`;
+    }
+}
+
+function matriz3x3(){
+    let a1 = parseFloat(document.querySelector(".a11").value) || 0;
+    let a2 = parseFloat(document.querySelector(".a12").value) || 0;
+    let a3 = parseFloat(document.querySelector(".a13").value) || 0;
+    let a4 = parseFloat(document.querySelector(".a21").value) || 0;
+    let a5 = parseFloat(document.querySelector(".a22").value) || 0;
+    let a6 = parseFloat(document.querySelector(".a23").value) || 0;
+    let a7 = parseFloat(document.querySelector(".a31").value) || 0;
+    let a8 = parseFloat(document.querySelector(".a32").value) || 0;
+    let a9 = parseFloat(document.querySelector(".a33").value) || 0;
+    let r1 = parseFloat(document.querySelector(".r1").value) || 0;
+    let r2 = parseFloat(document.querySelector(".r2").value) || 0;
+    let r3 = parseFloat(document.querySelector(".r3").value) || 0;
+
+    let determinante = (a1 * a5 * a9) + (a2 * a6 * a7) + (a3 * a4 * a8) - (a3 * a5 * a7) - (a1 * a6 * a8) - (a2 * a4 * a9);
+    let Dx = (r1 * a5 * a9) + (a2 * a6 * r3) + (a3 * r2 * a8) - (a3 * a5 * r2) - (r1 * a6 * a8) - (a2 * r3 * a9);
+    let Dy = (a1 * r2 * a9) + (r1 * a6 * a7) + (a3 * a4 * r3) - (a3 * a6 * a7) - (a1 * a4 * r3) - (r1 * a5 * a9);
+    let Dz = (a1 * a5 * r3) + (a2 * r2 * a7) + (r1 * a4 * a8) - (r1 * a5 * a8) - (a1 * a7 * r2) - (a2 * a4 * r3);
+
+    if (determinante !== 0) {
+        let X = Dx / determinante;
+        let Y = Dy / determinante;
+        let Z = Dz / determinante;
+        return `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br> X é: ${X.toFixed(2).replace('.', ',')}<br> Y é: ${Y.toFixed(2).replace('.', ',')}<br> Z é: ${Z.toFixed(2).replace('.', ',')}`;
+    } else {
+        return "O sistema não tem uma solução única.";
+    }
+}
+
+function razao(){
+    let a = document.querySelector(".A2").value
+    let b = document.querySelector(".B2").value
+    const razao = a / b;
+    return `O resultado é ${razao}`;
+}
+
+function proporcao(){
+    let a1 = document.querySelector(".A3").value
+    let b1 = document.querySelector(".B3").value
+    let c = document.querySelector(".C").value
+    const proporcao = (a1 * b1) / (c);
+    return `O X é ${proporcao}`;
+}
+
+function funcaoExponencial() {
+    const valoresX = [-3, -2, -1, 0, 1, 2, 3];
+    const inputA = document.querySelector(".funcaoExponencialInput");
+    const a = parseFloat(inputA.value);
+
+    if (isNaN(a)) {
+        return "Valor de 'a' inválido.";
+    } else {
+        const resultados = valoresX.map(x => Math.pow(a, x));
+        return valoresX.map((x, index) => `f(${x}) = ${resultados[index].toFixed(2)}`).join('<br>');
+    }
+}
+
+function funcaoQuadratica() {
+    const A3 = parseFloat(document.querySelector(".BA").value);
+    const B3 = parseFloat(document.querySelector(".BB").value);
+    const C2 = parseFloat(document.querySelector(".BC").value);
+    const delta2 = B3 * B3 - 4 * A3 * C2;
+
+    if (isNaN(A3) || isNaN(B3) || isNaN(C2)) {
+        return "Valores inválidos para a função quadrática.";
+    }
+
+    if (delta2 < 0) {
+        return "Delta negativo, sem raízes reais.";
+    } else {
+        const x1 = (-B3 + Math.sqrt(delta2)) / (2 * A3);
+        const x2 = (-B3 - Math.sqrt(delta2)) / (2 * A3);
+        const Xv = -B3 / (2 * A3);
+        const Yv = -delta2 / (4 * A3);
+        const EY = C2;
+        return `Raízes da função: x1= (${x1.toFixed(2)}, 0), x2= (${x2.toFixed(2)}, 0)<br>
+                Vértice da parábola: (${Xv.toFixed(2)}, ${Yv.toFixed(2)})<br>
+                Ponto de interseção com o eixo Y: (0, ${EY.toFixed(2)})`;
+    }
+}
+
+function calcularPA() {
+    let a1 = parseFloat(document.getElementById('paInicial').value);
+    let r = parseFloat(document.getElementById('paRazao').value);
+    let n = parseInt(document.getElementById('paTermos').value);
+    let pa = [];
+    
+    for (let i = 0; i < n; i++) {
+        pa.push(a1 + i * r);
+    }
+
+    document.getElementById('paResultado').innerHTML = "PA: " + pa.join(', ');
+}
+
+function calcularPG() {
+    let a1 = parseFloat(document.getElementById('pgInicial').value);
+    let r = parseFloat(document.getElementById('pgRazao').value);
+    let n = parseInt(document.getElementById('pgTermos').value);
+    let pg = [];
+    
+    for (let i = 0; i < n; i++) {
+        pg.push(a1 * Math.pow(r, i));
+    }
+
+    document.getElementById('pgResultado').innerHTML = "PG: " + pg.join(', ');
+}
+
+//Main Functions//
 function replaceSymbols(expression) {
     return expression
         .replace(/x/g, '*')
@@ -118,55 +420,26 @@ function replaceSymbols(expression) {
         .replace(/\^/g, '**') // Correctly replace `^` with `**`
 }
 
-function limparResultado(){
-    document.querySelector(".resultadoDiv").style.display = "none";
-}
-
 function calcular() {
     const operacao = document.querySelector(".calculoTipo").value;
     let resultado
     let num1 = parseFloat(document.querySelector(".input1").value) || 0;
 
     if (operacao === 'eval') {
-        let expressao = document.querySelector(".expressao").value;
-        expressao = replaceSymbols(expressao);
-
-        try {
-            resultado = eval(expressao);
-        } catch (error) {
-            resultado = "Erro na expressão!";
-        }
+        resultado = evalExpression();
     } else {
         switch (operacao) {
             case 'raiz':
-                let raiz1 = parseFloat(document.querySelector(".raiz1").value);
-                let raiz2 = parseFloat(document.querySelector(".raiz2").value);
-            
-                let raizR = Math.pow(raiz1, 1 / raiz2);
-                resultado = raizR.toFixed(2);
+                resultado = raizCalculo()
                 break;            
             case 'porcentagem':
-                const numero = parseFloat(document.querySelector(".numero").value);
-                const porcentagem = parseFloat(document.querySelector(".porcentagem").value);
-                resultado = (numero * porcentagem) / 100;
+                resultado = porcentagem();
                 break;
             case 'hipotenusa':
-                const A = parseFloat(document.querySelector(".A").value);
-                const B = parseFloat(document.querySelector(".B").value);
-                resultado = Math.sqrt(A * A + B * B);
+                resultado = hipotenusa();
                 break;
             case 'bhaskara':
-                const A2 = parseFloat(document.querySelector(".BA").value);
-                const B2 = parseFloat(document.querySelector(".BB").value);
-                const C = parseFloat(document.querySelector(".BC").value);
-                const delta = B2 * B2 - 4 * A2 * C;
-                if (delta < 0) {
-                    resultado = "Delta negativo, sem raízes reais.";
-                } else {
-                    const x1 = (-BB + Math.sqrt(delta)) / (2 * BA);
-                    const x2 = (-BB - Math.sqrt(delta)) / (2 * BA);
-                    resultado = `Delta =  ${delta}<br> x1 = ${x1}<br> x2 = ${x2}`;
-                }
+                resultado = bhaskara();
                 break;
             case "fatorial":
                 resultado = fatorial(num1);
@@ -175,150 +448,40 @@ function calcular() {
                 resultado = duploFatorial(num1);
                 break;
             case 'teoremaDePitagoras':
-                let valor1 = parseFloat(document.querySelector(".A").value);
-                let valor2 = parseFloat(document.querySelector(".B").value);
-                resultado = Math.sqrt(valor1 * valor1 + valor2 * valor2);              
+                resultado = teoremaDePitagoras();       
                 break;
             case 'Trigonometria':
-                const angleInDegrees = parseFloat(document.querySelector(".trigonometria").value);
-                const angleInRadians = angleInDegrees * (PI / 180);
-                const cosine = Math.cos(angleInRadians);
-                const sine = Math.sin(angleInRadians);
-                const tangent = Math.tan(angleInRadians);
-            
-                resultado = `Cosseno: ${cosine.toFixed(2).replace('.', ',')}<br>Seno: ${sine.toFixed(2).replace('.', ',')}<br>Tangente: ${tangent.toFixed(2).replace('.', ',')}`;
+                resultado = trigonometria()
                 break;
             case 'logaritmo':
-                const base = parseFloat(document.querySelector(".logaritmo").value);
-                const valor = parseFloat(document.querySelector(".logaritmando").value);
-                resultado = Math.log(valor) / Math.log(base);
+                resultado = log()
                 break;
             case 'Matriz':
                 const matrizTipo = document.querySelector(".matrizTipo").value;
 
                 if (matrizTipo === "somaDeMatriz") {
-                    let matrizA2 = document.querySelector(".matrizA3");
-                    let matrizB2 = document.querySelector(".matrizB3");
-                    let matrizC2 = document.querySelector(".matrizC3");
-                    let matrizD2 = document.querySelector(".matrizD3");
-                    let matrizA3 = document.querySelector(".matrizA4");
-                    let matrizB3 = document.querySelector(".matrizB4");
-                    let matrizC3 = document.querySelector(".matrizC4");
-                    let matrizD3 = document.querySelector(".matrizD4");
-                    let a1 = matrizA2.value;
-                    let b1 = matrizB2.value;
-                    let c1 = matrizC2.value;
-                    let d1 = matrizD2.value;
-    
-                    let a2 = matrizA3.value;
-                    let b2 = matrizB3.value;
-                    let c2 = matrizC3.value;
-                    let d2 = matrizD3.value;
-
-                    let aR = parseInt(a1) + parseInt(a2);
-                    let bR = parseInt(b1) + parseInt(b2);
-                    let cR = parseInt(c1) + parseInt(c2);
-                    let dR = parseInt(d1) + parseInt(d2);
-
-                    resultado = `A soma das matrizes é: ${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}<br>${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
+                    resultado = somaDeMatriz();
                     break;
                 } else if (matrizTipo === "multiplicacaoDeMatriz") {
-                    let matrizA2 = document.querySelector(".matrizA3");
-                    let matrizB2 = document.querySelector(".matrizB3");
-                    let matrizC2 = document.querySelector(".matrizC3");
-                    let matrizD2 = document.querySelector(".matrizD3");
-                    let matrizA3 = document.querySelector(".matrizA4");
-                    let matrizB3 = document.querySelector(".matrizB4");
-                    let matrizC3 = document.querySelector(".matrizC4");
-                    let matrizD3 = document.querySelector(".matrizD4");
-                    let a1 = matrizA2.value;
-                    let b1 = matrizB2.value;
-                    let c1 = matrizC2.value;
-                    let d1 = matrizD2.value;
-    
-                    let a2 = matrizA3.value;
-                    let b2 = matrizB3.value;
-                    let c2 = matrizC3.value;
-                    let d2 = matrizD3.value;
-    
-                    let aR = a1 * a2 + b1 * c2;
-                    let bR = a1 * b2 + b1 * d2;
-                    let cR = c1 * a2 + d1 * c2;
-                    let dR = c1 * b2 + d1 * d2;
-    
-                    resultado = `A multiplicação das matrizes é: ${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}<br>${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
+                    resultado = multiplicacaoDeMatriz();
                     break;
                 } else if (matrizTipo === "sistemaLinear") {
-                    let tipoMatriz = document.querySelector(".matrizTipo");
-                    let tipo = tipoMatriz.value;
-
-                if (tipo === "2x2") {
-                    let a1 = parseFloat(document.querySelector(".a11").value) || 0;
-                    let a2 = parseFloat(document.querySelector(".a12").value) || 0;
-                    let a3 = parseFloat(document.querySelector(".a21").value) || 0;
-                    let a4 = parseFloat(document.querySelector(".a22").value) || 0;
-                    let r1 = parseFloat(document.querySelector(".r1").value) || 0;
-                    let r2 = parseFloat(document.querySelector(".r2").value) || 0;
-
-                    let determinante = a1 * a4 - a2 * a3;
-                    let Dx = r1 * a4 - r2 * a2;
-                    let Dy = a1 * r2 - a3 * r1;
-                    let DxD = Dx / determinante;
-                    let DyD = Dy / determinante;
-
-                    if (determinante !== 0) {
-                        resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br>Dx é: ${Dx.toFixed(2).replace('.', ',')}<br>Dy é: ${Dy.toFixed(2).replace('.', ',')}<br>X é: ${DxD.toFixed(2).replace('.', ',')}<br>Y é: ${DyD.toFixed(2).replace('.', ',')}`;
-                        resultado += `<br>Classificação: SPD`;                        
-                    } else if (determinante === 0 && Dx === 0 && Dy === 0) {
-                        resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
-                        resultado += `. Classificação: SPI`;
-                    } else {
-                        resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
-                        resultado += `. Classificação: SI`;
-                    }
-                } else if (tipo === "3x3") {
-                    let a1 = parseFloat(document.querySelector(".a11").value) || 0;
-                    let a2 = parseFloat(document.querySelector(".a12").value) || 0;
-                    let a3 = parseFloat(document.querySelector(".a13").value) || 0;
-                    let a4 = parseFloat(document.querySelector(".a21").value) || 0;
-                    let a5 = parseFloat(document.querySelector(".a22").value) || 0;
-                    let a6 = parseFloat(document.querySelector(".a23").value) || 0;
-                    let a7 = parseFloat(document.querySelector(".a31").value) || 0;
-                    let a8 = parseFloat(document.querySelector(".a32").value) || 0;
-                    let a9 = parseFloat(document.querySelector(".a33").value) || 0;
-                    let r1 = parseFloat(document.querySelector(".r1").value) || 0;
-                    let r2 = parseFloat(document.querySelector(".r2").value) || 0;
-                    let r3 = parseFloat(document.querySelector(".r3").value) || 0;
-
-                    let determinante = (a1 * a5 * a9) + (a2 * a6 * a7) + (a3 * a4 * a8) - (a3 * a5 * a7) - (a1 * a6 * a8) - (a2 * a4 * a9);
-                    let Dx = (r1 * a5 * a9) + (a2 * a6 * r3) + (a3 * r2 * a8) - (a3 * a5 * r2) - (r1 * a6 * a8) - (a2 * r3 * a9);
-                    let Dy = (a1 * r2 * a9) + (r1 * a6 * a7) + (a3 * a4 * r3) - (a3 * a6 * a7) - (a1 * a4 * r3) - (r1 * a5 * a9);
-                    let Dz = (a1 * a5 * r3) + (a2 * r2 * a7) + (r1 * a4 * a8) - (r1 * a5 * a8) - (a1 * a7 * r2) - (a2 * a4 * r3);
-
-                    if (determinante !== 0) {
-                        let X = Dx / determinante;
-                        let Y = Dy / determinante;
-                        let Z = Dz / determinante;
-                        resultado = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}<br> X é: ${X.toFixed(2).replace('.', ',')}<br> Y é: ${Y.toFixed(2).replace('.', ',')}<br> Z é: ${Z.toFixed(2).replace('.', ',')}`;
-                    } else {
-                        resultado = "O sistema não tem uma solução única.";
-                    }
-                }   
+                    let tipo = document.querySelector(".tipoMatriz").value;
+                    if (tipo === "2x2") {
+                        resultado = matriz2x2();
+                        break;
+                    } else if (tipo === "3x3") {
+                        resultado = matriz3x3();
+                        break;
+                    }   
                 }
                 break;
             case 'RazãoeProporção':
                 let razaoouproporcao = document.querySelector("#razaoouproporção");
-                let a = document.querySelector(".A2").value
-                let a1 = document.querySelector(".A3").value
-                let b = document.querySelector(".B2").value
-                let b1 = document.querySelector(".B3").value
-                let c = document.querySelector(".C").value
                 if (razaoouproporcao.value === "razão") {
-                    const razao = a / b;
-                    resultado = `O resultado é ${razao}`;
+                    resultado = razao()
                 } else if (razaoouproporcao.value === "proporção") {
-                    const proporcao = (a1 * b1) / (c);
-                    resultado = `O X é ${proporcao}`;
+                    resultado = proporcao()
                 } else {
                     resultado = "Operação não reconhecida.";
                 }
@@ -327,140 +490,62 @@ function calcular() {
                 let geometriaTipoDiv2 = document.querySelector(".geometriaTipo").value;
                 
                 if (geometriaTipoDiv2 === 'perimetroCirculo') {
-                    let input1 = parseFloat(document.querySelector(".input12").value) || 0;
-                    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
-                    resultado = perimetroCirculo(input1, piInput);
+                    resultado = perimetroCirculo();
                 } else if (geometriaTipoDiv2 === 'areaCirculo') {
-                    let input1 = parseFloat(document.querySelector(".input12").value) || 0;
-                    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
-                    resultado = areaCirculo(input1, piInput);
+                    resultado = areaCirculo();
                 } else if (geometriaTipoDiv2 === 'perimetroRetangulo') {
-                    let larguraRetangulo = parseFloat(document.querySelector(".larguraRetangulo").value) || 0;
-                    let alturaRetangulo = parseFloat(document.querySelector(".alturaRetangulo").value) || 0;
-                    resultado = perimetroRetangulo(larguraRetangulo, alturaRetangulo);
+                    resultado = perimetroRetangulo();
                 } else if (geometriaTipoDiv2 === 'areaRetangulo') {
-                    let larguraRetangulo = parseFloat(document.querySelector(".larguraRetangulo").value) || 0;
-                    let alturaRetangulo = parseFloat(document.querySelector(".alturaRetangulo").value) || 0;
-                    resultado = areaRetangulo(larguraRetangulo, alturaRetangulo);
+                    resultado = areaRetangulo();
                 } else if (geometriaTipoDiv2 === 'perimetroTriangulo') {
-                    let a2 = parseFloat(document.querySelector(".BA").value) || 0;
-                    let b2 = parseFloat(document.querySelector(".BB").value) || 0;
-                    let c2 = parseFloat(document.querySelector(".BC").value) || 0;
-                    resultado = perimetroTriangulo(a2, b2, c2);
+                    resultado = perimetroTriangulo();
                 } else if (geometriaTipoDiv2 === 'areaTriangulo') {
-                    let baseTriangulo = parseFloat(document.querySelector(".baseTriangulo").value) || 0;
-                    let alturaTriangulo = parseFloat(document.querySelector(".alturaTriangulo").value) || 0;
-                    resultado = areaTriangulo(baseTriangulo, alturaTriangulo);
+                    resultado = areaTriangulo();
                 } else if (geometriaTipoDiv2 === 'areaTrianguloHero') {
-                    let a2 = parseFloat(document.querySelector(".BA").value) || 0;
-                    let b2 = parseFloat(document.querySelector(".BB").value) || 0;
-                    let c2 = parseFloat(document.querySelector(".BC").value) || 0;
-                    resultado = areaTrianguloHero(a2, b2, c2);
+                    resultado = areaTrianguloHero();
                 } else if (geometriaTipoDiv2 === 'areaTrapezio') {
-                    let baseMaior = parseFloat(document.querySelector(".baseMaior").value) || 0;
-                    let baseMenor = parseFloat(document.querySelector(".baseMenor").value) || 0;
-                    let altura = parseFloat(document.querySelector(".altura").value) || 0;
-                    resultado = areaTrapezio(baseMaior, baseMenor, altura);
+                    resultado = areaTrapezio();
                 } else if (geometriaTipoDiv2 === 'areaParalelogramo') {
-                    let baseParalelogramo = parseFloat(document.querySelector(".baseParalelogramo").value) || 0;
-                    let alturaParalelogramo = parseFloat(document.querySelector(".alturaParalelogramo").value) || 0;
-                    resultado = areaParalelogramo(baseParalelogramo, alturaParalelogramo);
-                } else if (geometriaTipoDiv2 === 'areaLosango') {
-                    let diagonalMenor = parseFloat(document.querySelector(".diagonalMenor").value) || 0;
-                    let diagonalMaior = parseFloat(document.querySelector(".diagonalMaior").value) || 0;
-                    resultado = areaLosango(diagonalMenor, diagonalMaior);
+                    resultado = areaParalelogramo();
+                } else if (geometriaTipoDiv2 === 'areaLosango') { 0;
+                    resultado = areaLosango();
                 } else if (geometriaTipoDiv2 === 'perimetroQuadrado') {
-                    let ladoQuadrado = parseFloat(document.querySelector(".ladoQuadrado").value) || 0;
-                    resultado = perimetroQuadrado(ladoQuadrado);
+                    resultado = perimetroQuadrado();
                 } else if (geometriaTipoDiv2 === 'areaQuadrado') {
-                    let ladoQuadrado = parseFloat(document.querySelector(".ladoQuadrado").value) || 0;
-                    resultado = areaQuadrado(ladoQuadrado);
+                    resultado = areaQuadrado();
                 } else if (geometriaTipoDiv2 === 'volumeCubo') {
-                    let ladoQuadrado = parseFloat(document.querySelector(".ladoQuadrado").value) || 0;
-                    resultado = volumeCubo(ladoQuadrado);
+                    resultado = volumeCubo();
                 } else if (geometriaTipoDiv2 === 'volumeParalelepipedo') {
-                    let comprimento = parseFloat(document.querySelector(".comprimento").value) || 0;
-                    let largura = parseFloat(document.querySelector(".largura").value) || 0;
-                    let altura = parseFloat(document.querySelector(".altura").value) || 0;
-                    resultado = volumeParalelepipedo(comprimento, largura, altura);
+                    resultado = volumeParalelepipedo();
                 } else if (geometriaTipoDiv2 === 'areaEsfera') {
-                    let input1 = parseFloat(document.querySelector(".input12").value) || 0;
-                    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
-                    resultado = areaEsfera(input1, piInput);
+                    resultado = areaEsfera();
                 } else if (geometriaTipoDiv2 === 'volumeEsfera') {
-                    let input1 = parseFloat(document.querySelector(".input12").value) || 0;
-                    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
-                    resultado = volumeEsfera(input1, piInput);
+                    resultado = volumeEsfera();
                 } else if (geometriaTipoDiv2 === 'areaCilindro') {
-                    let raioCilindro = parseFloat(document.querySelector(".raioCilindro").value) || 0;
-                    let alturaCilindro = parseFloat(document.querySelector(".alturaCilindro").value) || 0;
-                    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
-                    resultado = areaCilindro(raioCilindro, alturaCilindro, piInput);
+                    resultado = areaCilindro();
                 } else if (geometriaTipoDiv2 === 'volumeCilindro') {
-                    let raioCilindro = parseFloat(document.querySelector(".raioCilindro").value) || 0;
-                    let alturaCilindro = parseFloat(document.querySelector(".alturaCilindro").value) || 0;
-                    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
-                    resultado = volumeCilindro(raioCilindro, alturaCilindro, piInput);
+                    resultado = volumeCilindro();
                 } else if (geometriaTipoDiv2 === 'areaCone') {
-                    let cone = parseFloat(document.querySelector(".raiocone").value) || 0;
-                    let geratriz = parseFloat(document.querySelector(".alturaCone").value) || 0;
-                    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
-                    resultado = areaCone(cone, geratriz, piInput);
+                    resultado = areaCone();
                 } else if (geometriaTipoDiv2 === 'volumeCone') {
-                    let cone = parseFloat(document.querySelector(".raioCone").value) || 0;
-                    let geratriz = parseFloat(document.querySelector(".alturaCone").value) || 0;
-                    let piInput = parseFloat(document.querySelector(".piInput").value) || 0;
-                    resultado = volumeCone(cone, geratriz, piInput);
-                } else if (geometriaTipoDiv2 === 'distanciaDoisPontosValue') {
-                    let x1 = parseFloat(document.querySelector(".x1").value) || 0;
-                    let y1 = parseFloat(document.querySelector(".y1").value) || 0;
-                    let x2 = parseFloat(document.querySelector(".x2").value) || 0;
-                    let y2 = parseFloat(document.querySelector(".y2").value) || 0;
-                    resultado = distancia(x1, y1, x2, y2);
+                    resultado = volumeCone();
+                } else if (geometriaTipoDiv2 === 'distanciaDoisPontosValue') {;
+                    resultado = distancia();
                 } else {
                     resultado = "Selecione uma operação válida.";
                 }
                 break;   
-                case 'funcao':
-                    let funcaoTipo = document.querySelector(".funcaoTipo");        
-                
-                    if (funcaoTipo.value === 'funcaoQuadratica') {
-                        const A3 = parseFloat(document.querySelector(".BA").value);
-                        const B3 = parseFloat(document.querySelector(".BB").value);
-                        const C2 = parseFloat(document.querySelector(".BC").value);
-                        const delta2 = B3 * B3 - 4 * A3 * C2;
-                
-                        if (delta2 < 0) {
-                            resultado = "Delta negativo, sem raízes reais.";
-                        } else {
-                            const x1 = (-B3 + Math.sqrt(delta2)) / (2 * A3);
-                            const x2 = (-B3 - Math.sqrt(delta2)) / (2 * A3);
-                            const Xv = -B3 / (2 * A3);
-                            const Yv = -delta2 / (4 * A3);
-                            const EY = C2;
-                            resultado = `Raízes da função: x1= (${x1.toFixed(2)}, 0), x2= (${x2.toFixed(2)}, 0)<br>
-                                         Vértice da parábola: (${Xv.toFixed(2)}, ${Yv.toFixed(2)})<br>
-                                         Ponto de interseção com o eixo Y: (0, ${EY.toFixed(2)})`;
-                        }
-                    } else if (funcaoTipo.value === 'funcaoExponencial') {
-                        function funcaoExponencial(x, a) {
-                            return Math.pow(a, x);
-                        }
-                
-                        const valoresX = [-3, -2, -1, 0, 1, 2, 3];
-                        const inputA = document.querySelector(".funcaoExponencialInput");
-                        const a = parseFloat(inputA.value);
-                
-                        if (isNaN(a)) {
-                            resultado = "Valor de 'a' inválido.";
-                        } else {
-                            const resultados = valoresX.map(x => funcaoExponencial(x, a));
-                            resultado = valoresX.map((x, index) => `f(${x}) = ${resultados[index].toFixed(2)}`).join('<br>');
-                        }
-                    } else {
-                        resultado = "Tipo de função não implementado.";
-                    }
-                    break;
+            case 'funcao':
+                let funcaoTipo = document.querySelector(".funcaoTipo");
+            
+                if (funcaoTipo.value === 'funcaoQuadratica') {
+                    resultado = funcaoQuadratica();
+                } else if (funcaoTipo.value === 'funcaoExponencial') {
+                    resultado = funcaoExponencial();
+                } else {
+                    resultado = "Tipo de função não implementado.";
+                }
+                break;
             default:
                 resultado = "Operação não implementada.";
             break;
@@ -469,106 +554,6 @@ function calcular() {
     }
     return resultado
 }
-
-function updateHistory() {
-    const historyDiv = document.querySelector('.history');
-    historyDiv.innerHTML = '<h3>Histórico</h3>';
-    history.forEach(entry => {
-        const p = document.createElement('p');
-        historyDiv.style.textAlign = "center"
-        p.style.color = "white"
-        p.innerHTML = entry;
-        historyDiv.appendChild(p);
-    });
-}
-
-function clearHistory() {
-    history.length = 0;
-    updateHistory();
-}
-
-function  displayAllNone() {
-    document.querySelector(".input1Div").style.display = "none";
-    document.querySelector(".input1Div2").style.display = "none";
-    document.querySelector(".EvalDiv").style.display = "none";
-    document.querySelector(".PorcentagemDiv").style.display = "none";
-    document.querySelector(".PitagorasDiv").style.display = "none";
-    document.querySelector(".BhaskaraDiv").style.display = "none";
-    document.querySelector(".TrigonometriaDiv").style.display = "none";
-    document.querySelector(".LogDiv").style.display = "none";
-    document.querySelector(".matrizTipo").style.display = "none";
-    document.querySelector(".matrizDiv2").style.display = "none";
-    document.querySelector(".sistemaLinearDiv2x2Div").style.display = "none";
-    document.querySelector(".sistemaLinearDiv3x3Div").style.display = "none";
-    document.querySelector(".tipoMatriz").style.display = "none";
-    document.querySelector(".RazãoeProporção").style.display = "none";
-    document.querySelector(".raizDiv").style.display = "none";
-    document.querySelector(".areaRetangulo").style.display = "none";
-    document.querySelector(".areaLosango").style.display = "none";
-    document.querySelector(".altura").style.display = "none";
-    document.querySelector(".largura").style.display = "none";
-    document.querySelector(".areaTriangulo").style.d1isplay = "none";
-    document.querySelector(".areaTrapezio").style.display = "none";
-    document.querySelector(".areaParalelogramo").style.display = "none";
-    document.querySelector(".areaQuadrado").style.display = "none";
-    document.querySelector(".volumeParalelepipedo").style.display = "none";
-    document.querySelector(".areaCilindro").style.display = "none";
-    document.querySelector(".distanciaDoisPontos").style.display = "none";
-    document.querySelector(".piInputDiv").style.display = "none";
-    document.querySelector(".sistemaLinearDiv").style.display = "none";
-    document.querySelector(".funcaoTipo").style.display = "none";
-    document.querySelector(".geometriaTipo").style.display = "none";
-    document.querySelector(".inputNormal").style.display = "none";
-}
-
-function displayNoneExtra() {
-    // Oculta divs específicas
-    document.querySelector(".input1Div").style.display = "none";
-    document.querySelector(".input1Div2").style.display = "none";
-    document.querySelector(".EvalDiv").style.display = "none";
-    document.querySelector(".PorcentagemDiv").style.display = "none";
-    document.querySelector(".PitagorasDiv").style.display = "none";
-    document.querySelector(".BhaskaraDiv").style.display = "none";
-    document.querySelector(".TrigonometriaDiv").style.display = "none";
-    document.querySelector(".LogDiv").style.display = "none";
-    document.querySelector(".matrizTipo").style.display = "none";
-    document.querySelector(".matrizDiv2").style.display = "none";
-    document.querySelector(".sistemaLinearDiv2x2Div").style.display = "none";
-    document.querySelector(".sistemaLinearDiv3x3Div").style.display = "none";
-    document.querySelector(".tipoMatriz").style.display = "none";
-    document.querySelector(".RazãoeProporção").style.display = "none";
-    document.querySelector(".raizDiv").style.display = "none";
-    document.querySelector(".areaRetangulo").style.display = "none";
-    document.querySelector(".areaLosango").style.display = "none";
-    document.querySelector(".altura").style.display = "none";
-    document.querySelector(".largura").style.display = "none";
-    document.querySelector(".areaTriangulo").style.d1isplay = "none";
-    document.querySelector(".areaTrapezio").style.display = "none";
-    document.querySelector(".areaParalelogramo").style.display = "none";
-    document.querySelector(".areaQuadrado").style.display = "none";
-    document.querySelector(".volumeParalelepipedo").style.display = "none";
-    document.querySelector(".areaCilindro").style.display = "none";
-    document.querySelector(".distanciaDoisPontos").style.display = "none";
-    document.querySelector(".piInputDiv").style.display = "none";
-    document.querySelector(".sistemaLinearDiv").style.display = "none";
-    document.querySelector(".funcaoTipo").style.display = "none";
-    document.querySelector(".inputNormal").style.display = "none";
-
-    // Oculta elementos com classes específicas
-    document.querySelector(".funcaoTipo").style.display = "none";
-    document.querySelector(".areaRetangulo").style.display = "none";
-    document.querySelector(".altura").style.display = "none";
-    document.querySelector(".largura").style.display = "none";
-    document.querySelector(".areaTriangulo").style.display = "none";
-    document.querySelector(".areaLosango").style.display = "none"
-    document.querySelector(".areaTrapezio").style.display = "none";
-    document.querySelector(".areaParalelogramo").style.display = "none";
-    document.querySelector(".areaQuadrado").style.display = "none";
-    document.querySelector(".volumeParalelepipedo").style.display = "none";
-    document.querySelector(".areaCilindro").style.display = "none";
-    document.querySelector(".distanciaDoisPontos").style.display = "none";
-}
-
 
 function operacaoSelected() {
     displayAllNone();
@@ -760,10 +745,150 @@ function operacaoSelected() {
                     resultado = 'Opção não reconhecida'
                 }
             });
-            break;                 
+            break; 
+        case 'Progressão':
+            displayAllNone();
+            let progressaoTipo = document.querySelector(".progressaoTipo");
+            let paDiv = document.querySelector('.PAD');
+            let pgDiv = document.querySelector('.PGD');
+        
+            progressaoTipo.style.display = 'block';
+            progressaoTipo.addEventListener('change', function () {
+                if (progressaoTipo.value === 'PA') {
+                    paDiv.style.display = 'block';
+                    pgDiv.style.display = 'none';
+                } else if (progressaoTipo.value === 'PG') {
+                    pgDiv.style.display = 'block';
+                    paDiv.style.display = 'none';
+                }else{
+                    paDiv.style.display = 'none';
+                    pgDiv.style.display = 'none';
+                }
+            });
+            break;
         default:
         break;
     }
+}
+
+//Other Functions//
+function updateHistory() {
+    const historyDiv = document.querySelector('.history');
+    historyDiv.innerHTML = '<h3>Histórico</h3>';
+    history.forEach(entry => {
+        const p = document.createElement('p');
+        historyDiv.style.textAlign = "center"
+        p.style.color = "white"
+        p.innerHTML = entry;
+        historyDiv.appendChild(p);
+    });
+}
+
+function clearHistory() {
+    history.length = 0;
+    updateHistory();
+}
+
+function limparResultado(){
+    document.querySelector(".divResultado").style.display = "none";
+}
+
+function mostrarCalculo() {
+    let calculo = document.querySelector(".calculo");
+    calculo.style.display = "block";
+}
+
+function limparCalculo(){
+    document.querySelector('.calculo').style.display = "none";
+}
+
+function  displayAllNone() {
+    document.querySelector(".input1Div").style.display = "none";
+    document.querySelector(".input1Div2").style.display = "none";
+    document.querySelector(".EvalDiv").style.display = "none";
+    document.querySelector(".PorcentagemDiv").style.display = "none";
+    document.querySelector(".PitagorasDiv").style.display = "none";
+    document.querySelector(".BhaskaraDiv").style.display = "none";
+    document.querySelector(".TrigonometriaDiv").style.display = "none";
+    document.querySelector(".LogDiv").style.display = "none";
+    document.querySelector(".matrizTipo").style.display = "none";
+    document.querySelector(".matrizDiv2").style.display = "none";
+    document.querySelector(".sistemaLinearDiv2x2Div").style.display = "none";
+    document.querySelector(".sistemaLinearDiv3x3Div").style.display = "none";
+    document.querySelector(".tipoMatriz").style.display = "none";
+    document.querySelector(".RazãoeProporção").style.display = "none";
+    document.querySelector(".raizDiv").style.display = "none";
+    document.querySelector(".areaRetangulo").style.display = "none";
+    document.querySelector(".areaLosango").style.display = "none";
+    document.querySelector(".altura").style.display = "none";
+    document.querySelector(".largura").style.display = "none";
+    document.querySelector(".areaTriangulo").style.d1isplay = "none";
+    document.querySelector(".areaTrapezio").style.display = "none";
+    document.querySelector(".areaParalelogramo").style.display = "none";
+    document.querySelector(".areaQuadrado").style.display = "none";
+    document.querySelector(".volumeParalelepipedo").style.display = "none";
+    document.querySelector(".areaCilindro").style.display = "none";
+    document.querySelector(".distanciaDoisPontos").style.display = "none";
+    document.querySelector(".piInputDiv").style.display = "none";
+    document.querySelector(".sistemaLinearDiv").style.display = "none";
+    document.querySelector(".funcaoTipo").style.display = "none";
+    document.querySelector(".geometriaTipo").style.display = "none";
+    document.querySelector(".inputNormal").style.display = "none";
+    document.querySelector(".progressaoTipo").style.display = "none";
+    document.querySelector(".PAD").style.display = 'none'
+    document.querySelector(".PGD").style.display = 'none'
+    document.querySelector(".progressaoTipo").style.display = "none";
+}
+
+function displayNoneExtra() {
+    // Oculta divs específicas
+    document.querySelector(".input1Div").style.display = "none";
+    document.querySelector(".input1Div2").style.display = "none";
+    document.querySelector(".EvalDiv").style.display = "none";
+    document.querySelector(".PorcentagemDiv").style.display = "none";
+    document.querySelector(".PitagorasDiv").style.display = "none";
+    document.querySelector(".BhaskaraDiv").style.display = "none";
+    document.querySelector(".TrigonometriaDiv").style.display = "none";
+    document.querySelector(".LogDiv").style.display = "none";
+    document.querySelector(".matrizTipo").style.display = "none";
+    document.querySelector(".matrizDiv2").style.display = "none";
+    document.querySelector(".sistemaLinearDiv2x2Div").style.display = "none";
+    document.querySelector(".sistemaLinearDiv3x3Div").style.display = "none";
+    document.querySelector(".tipoMatriz").style.display = "none";
+    document.querySelector(".RazãoeProporção").style.display = "none";
+    document.querySelector(".raizDiv").style.display = "none";
+    document.querySelector(".areaRetangulo").style.display = "none";
+    document.querySelector(".areaLosango").style.display = "none";
+    document.querySelector(".altura").style.display = "none";
+    document.querySelector(".largura").style.display = "none";
+    document.querySelector(".areaTriangulo").style.d1isplay = "none";
+    document.querySelector(".areaTrapezio").style.display = "none";
+    document.querySelector(".areaParalelogramo").style.display = "none";
+    document.querySelector(".areaQuadrado").style.display = "none";
+    document.querySelector(".volumeParalelepipedo").style.display = "none";
+    document.querySelector(".areaCilindro").style.display = "none";
+    document.querySelector(".distanciaDoisPontos").style.display = "none";
+    document.querySelector(".piInputDiv").style.display = "none";
+    document.querySelector(".sistemaLinearDiv").style.display = "none";
+    document.querySelector(".funcaoTipo").style.display = "none";
+    document.querySelector(".inputNormal").style.display = "none";
+
+    // Oculta elementos com classes específicas
+    document.querySelector(".funcaoTipo").style.display = "none";
+    document.querySelector(".areaRetangulo").style.display = "none";
+    document.querySelector(".altura").style.display = "none";
+    document.querySelector(".largura").style.display = "none";
+    document.querySelector(".areaTriangulo").style.display = "none";
+    document.querySelector(".areaLosango").style.display = "none"
+    document.querySelector(".areaTrapezio").style.display = "none";
+    document.querySelector(".areaParalelogramo").style.display = "none";
+    document.querySelector(".areaQuadrado").style.display = "none";
+    document.querySelector(".volumeParalelepipedo").style.display = "none";
+    document.querySelector(".areaCilindro").style.display = "none";
+    document.querySelector(".distanciaDoisPontos").style.display = "none";
+    document.querySelector(".PAD").style.display = 'none'
+    document.querySelector(".PGD").style.display = 'none'
+    document.querySelector(".progressaoTipo").style.display = "none";
 }
 
 function result() {
@@ -775,11 +900,14 @@ function result() {
         history.push(resultado);
         updateHistory();
     }    
-
-    document.querySelector(".resultadoDiv").style.display = "block";
+    var audio = new Audio("audios/SomdeLápisescrevendo_EfeitoSonorodeLápisescrevendo_[cut_1sec].mp3");
+    audio.play();
+    document.querySelector(".divResultado").style.display = "block";
 }
 
 document.querySelector(".buttoncalcular").addEventListener("click", result);
 document.querySelector(".calculoTipo").addEventListener("change", operacaoSelected);
 document.querySelector(".clearResult").addEventListener("click", limparResultado);
-document.querySelector(".clearHistory").addEventListener("click", clearHistory)
+document.querySelector(".clearHistory").addEventListener("click", clearHistory);
+document.querySelector(".mostrarCalculo").addEventListener("click", mostrarCalculo);
+document.querySelector(".clearCalulo").addEventListener("click", limparCalculo);

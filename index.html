@@ -25,6 +25,7 @@
             <option value="RazãoeProporção">Razão e Proporção</option>
             <option value="geometria">Geometria</option>
             <option value="funcao">Função</option>
+            <option value="Progressão">Progressão</option>
         </select>
 
         <select class="funcaoTipo" style="display: none;">
@@ -229,6 +230,26 @@
             </div>
         </div>
 
+        <div>
+            <select class="progressaoTipo" style="display: none;">
+                <option value="" disabled selected>Escolha o tipo de progressão</option>
+                <option value="PA">Progressão Aritmética</option>
+                <option value="PG">Progressão Geométrica</option>
+            </select>
+        
+            <div class="PAD" style="display: none;">
+                <input type="number" id="paInicial" placeholder="Primeiro termo">
+                <input type="number" id="paRazao" placeholder="Razão">
+                <input type="number" id="paTermos" placeholder="Número de termos">
+            </div>
+        
+            <div class="PGD" style="display: none;">
+                <input type="number" id="pgInicial" placeholder="Primeiro termo">
+                <input type="number" id="pgRazao" placeholder="Razão">
+                <input type="number" id="pgTermos" placeholder="Número de termos">
+            </div>
+        </div>
+
         <div class="LogDiv" style="display: none;">
             <input class="logaritmo" type="number" placeholder="Digite a base">
             <input class="logaritmando" type="number" placeholder="Digite o logaritmando">
@@ -252,15 +273,30 @@
                 <input class="C" type="text" placeholder="Terceiro Valor">
             </div>
         </div>
-        
+
+        <h1>Tudo deve estar na mesma medida, para que o calculo saia certo!</h1>
+
         <button class="buttoncalcular">Calcular</button>
         <button class="clearResult">Limpar Resultado</button>
 
-        <div style="display: none;" class="resultadoDiv">
-            <h1>Resultado:</h1>
-            <span class="resultado"></span>
-        </div>      
+        <div class="divResultado" style="display: none;">
+            <div class="resultadoDiv">
+                <h1>Resultado:</h1>
+                <span class="resultado"></span>
+                <button class="mostrarCalculo">Mostrar Calculo</button>
+            </div>
+            <div class="calculo" style="display: none;">
+                <h1>
+                    Em Breve
+                </h1>
+                <p>
+                    Em Breve
+                </p>
+                <button class="clearCalulo">Limpar Calculo</button>
+            </div>
+        </div>
     </div>
+
     <div class="historyCU">
         <div class="history"><h3>Histórico</h3></div>
         <button class="clearHistory">Limpar Historico</button>
