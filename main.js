@@ -389,12 +389,22 @@ function calcularPA() {
     let r = parseFloat(document.getElementById('paRazao').value);
     let n = parseInt(document.getElementById('paTermos').value);
     let pa = [];
-    
+    let tipoPA = '';
+
     for (let i = 0; i < n; i++) {
         pa.push(a1 + i * r);
     }
 
-    document.getElementById('paResultado').innerHTML = "PA: " + pa.join(', ');
+    // Determinar o tipo de PA
+    if (r > 0) {
+        tipoPA = 'Crescente';
+    } else if (r < 0) {
+        tipoPA = 'Decrescente';
+    } else {
+        tipoPA = 'Constante';
+    }
+
+    return `PA (${tipoPA}): ${pa.join(', ')}`;
 }
 
 function calcularPG() {
@@ -402,12 +412,24 @@ function calcularPG() {
     let r = parseFloat(document.getElementById('pgRazao').value);
     let n = parseInt(document.getElementById('pgTermos').value);
     let pg = [];
-    
+    let tipoPG = '';
+
     for (let i = 0; i < n; i++) {
         pg.push(a1 * Math.pow(r, i));
     }
 
-    document.getElementById('pgResultado').innerHTML = "PG: " + pg.join(', ');
+    // Determinar o tipo de PG
+    if (r > 1) {
+        tipoPG = 'Crescente';
+    } else if (r < 1 && r > 0) {
+        tipoPG = 'Decrescente';
+    } else if (r === 1) {
+        tipoPG = 'Constante';
+    } else {
+        tipoPG = 'Não definido (r <= 0)';
+    }
+
+    return `PG (${tipoPG}): ${pg.join(', ')}`;
 }
 
 //Main Functions//
@@ -546,6 +568,17 @@ function calcular() {
                     resultado = "Tipo de função não implementado.";
                 }
                 break;
+            case 'Progressão':
+                let progressaoTipo = document.querySelector(".progressaoTipo");
+
+                if (progressaoTipo.value === 'PA'){
+                    resultado = calcularPA();
+                }else if (progressaoTipo.value === 'PG'){
+                    resultado = calcularPG();
+                }else{
+                    resultado = "Tipo de função não implementado.";
+                }
+                break
             default:
                 resultado = "Operação não implementada.";
             break;
